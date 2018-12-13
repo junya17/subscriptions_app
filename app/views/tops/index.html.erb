@@ -3,7 +3,7 @@
 <% @amazon_prime.each do | prime |%>
 <% if current_user.id == prime.user_id %>
 <ul class="list-group list-group-flush">
-	<li class="list-group-item item">AmazoncPrime:
+	<li class="list-group-item item"><%= link_to 'AmazonPrime:', amazon_prime_path(prime) %>
 		<%= prime.price.to_s(:delimited) %>円</li>
 	<% end %>
 	<% end %>
