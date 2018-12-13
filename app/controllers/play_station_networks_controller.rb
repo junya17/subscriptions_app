@@ -2,6 +2,7 @@
 
 class PlayStationNetworksController < ApplicationController
   before_action :set_play_station_network, only: %i[show edit update destroy]
+  before_action :authenticate_user!
 
   # GET /play_station_networks
   # GET /play_station_networks.json

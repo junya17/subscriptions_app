@@ -2,4 +2,5 @@
 
 class Hulu < ApplicationRecord
   validates :price, presence: true
+  belongs_to :user
 end

@@ -2,7 +2,8 @@
 
 class AmazonPrimesController < ApplicationController
   before_action :set_amazon_prime, only: %i[show edit update destroy]
-
+  before_action :authenticate_user!
+  
   # GET /amazon_primes
   # GET /amazon_primes.json
   def index
@@ -15,7 +16,7 @@ class AmazonPrimesController < ApplicationController
 
   # GET /amazon_primes/new
   def new
-    @amazon_prime = AmazonPrime.new
+    @amazon_prime = current_user.amazon_primes.build
   end
 
   # GET /amazon_primes/1/edit
@@ -24,7 +25,7 @@ class AmazonPrimesController < ApplicationController
   # POST /amazon_primes
   # POST /amazon_primes.json
   def create
-    @amazon_prime = AmazonPrime.new(amazon_prime_params)
+    @amazon_prime = current_user.amazon_primes.build(amazon_prime_params)
 
     respond_to do |format|
       if @amazon_prime.save

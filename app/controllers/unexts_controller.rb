@@ -2,6 +2,7 @@
 
 class UnextsController < ApplicationController
   before_action :set_unext, only: %i[show edit update destroy]
+  before_action :authenticate_user!
 
   # GET /unexts
   # GET /unexts.json
@@ -15,7 +16,7 @@ class UnextsController < ApplicationController
 
   # GET /unexts/new
   def new
-    @unext = Unext.new
+    @unext = current_user.unexts.build
   end
 
   # GET /unexts/1/edit
@@ -24,7 +25,7 @@ class UnextsController < ApplicationController
   # POST /unexts
   # POST /unexts.json
   def create
-    @unext = Unext.new(unext_params)
+    @unext = current_user.unexts.build(unext_params)
 
     respond_to do |format|
       if @unext.save

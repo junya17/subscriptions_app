@@ -1,68 +1,117 @@
 <h1>サービスを選ぶ</h1>
 <ul class="list-group list-group-flush">
 	<li class="list-group-item">
-		<p class="item">AmazonPrime:
+		<p class="item">
+			AmazonPrime:
 			<% if @amazon_primes.empty? %>
+			<%= link_to '+',
+      new_amazon_prime_path , class: "button"%>
+			<% elsif
+      @amazon_primes.find_by(user_id: current_user.id) %>
+			<%= link_to '-',
+      amazon_prime_path(@amazon_prime), method: :delete, class: "button" %>
+			<%
+      else %>
 			<%= link_to '+', new_amazon_prime_path , class: "button"%>
-			<% else %>
-			<%= link_to '-', amazon_prime_path(@amazon_prime), method: :delete, class: "button" %>
-			<%end%>
+			<% end
+      %>
 		</p>
 	</li>
 	<li class="list-group-item">
-		<p class="item">AmazonMusic:
+		<p class="item">
+			AmazonMusic:
 			<% if @amazon_musics.empty? %>
+			<%= link_to '+',
+      new_amazon_music_path , class: "button"%>
+			<% elsif
+      @amazon_musics.find_by(user_id: current_user.id) %>
+			<%= link_to '-',
+      amazon_music_path(@amazon_music), method: :delete, class: "button" %>
+			<%
+      else %>
 			<%= link_to '+', new_amazon_music_path , class: "button"%>
-			<% else %>
-			<%= link_to '-', amazon_music_path(@amazon_music), method: :delete, class: "button" %>
-			<%end%>
+			<% end
+      %>
 		</p>
 	</li>
 	<li class="list-group-item">
-		<p class="item">Amazonkindle:
+		<p class="item">
+			Amazonkindle:
 			<% if @amazon_kindles.empty? %>
-			<%= link_to '+', new_amazon_kindle_unlimited_path , class: "button"%>
+			<%= link_to '+',
+      new_amazon_kindle_unlimited_path , class: "button"%>
+			<% elsif
+      @amazon_kindles.find_by(user_id: current_user.id)%>
+			<%= link_to '-',
+      amazon_kindle_unlimited_path(@amazon_kindle), method: :delete, class:
+      "button" %>
 			<% else %>
-			<%= link_to '-', amazon_kindle_unlimited_path(@amazon_kindle), method: :delete, class: "button" %>
-			<%end%>
+			<%= link_to '+', new_amazon_kindle_unlimited_path ,
+      class: "button"%>
+			<% end %>
 		</p>
 	</li>
 	<li class="list-group-item">
-		<p class="item">GooglePlay:
+		<p class="item">
+			GooglePlay:
 			<% if @google_plays.empty? %>
+			<%= link_to '+',
+      new_google_play_music_path , class: "button"%>
+			<% elsif
+      @google_plays.find_by(user_id: current_user.id)%>
+			<%= link_to '-',
+      google_play_music_path(@google), method: :delete, class: "button" %>
+			<%
+      else %>
 			<%= link_to '+', new_google_play_music_path , class: "button"%>
-			<% else %>
-			<%= link_to '-', google_play_music_path(@google_play), method: :delete, class: "button" %>
-			<%end%>
+			<%
+      end %>
 		</p>
 	</li>
 	<li class="list-group-item">
-		<p class="item">Hulu:
+		<p class="item">
+			Hulu:
 			<% if @hulus.empty? %>
+			<%= link_to '+', new_hulu_path , class:
+      "button"%>
+			<% elsif @hulus.find_by(user_id: current_user.id)%>
+			<%=
+      link_to '-', hulu_path(@hulu), method: :delete, class: "button" %>
+			<% else
+      %>
 			<%= link_to '+', new_hulu_path , class: "button"%>
-			<% else %>
-			<%= link_to '-', hulu_path(@hulu), method: :delete, class: "button" %>
-			<%end%>
+			<% end %>
 		</p>
 	</li>
-	
+
 	<li class="list-group-item">
-		<p class="item">Spotify:
+		<p class="item">
+			Spotify:
 			<% if @spotifies.empty? %>
-			<%= link_to '+', new_spotify_path , class: "button"%>
+			<%= link_to '+', new_spotify_path ,
+      class: "button"%>
+			<% elsif @spotifies.find_by(user_id: current_user.id)%>
+			<%= link_to '-', spotify_path(@spotify), method: :delete, class: "button"
+      %>
 			<% else %>
-			<%= link_to '-', spotify_path(@spotify), method: :delete, class: "button" %>
-			<%end%>
+			<%= link_to '+', new_spotify_path , class: "button"%>
+			<% end
+      %>
 		</p>
 	</li>
 	<li class="list-group-item">
-		<p class="item">U-NEXT:
+		<p class="item">
+			U-NEXT:
 			<% if @unexts.empty? %>
+			<%= link_to '+', new_unext_path , class:
+      "button"%>
+			<% elsif @unexts.find_by(user_id: current_user.id)%>
+			<%=
+      link_to '-', unext_path(@unext), method: :delete, class: "button" %>
+			<%
+      else %>
 			<%= link_to '+', new_unext_path , class: "button"%>
-			<% else %>
-			<%= link_to '-', unext_path(@unext), method: :delete, class: "button" %>
-			<%end%>
+			<% end %>
 		</p>
 	</li>
-	
 </ul>

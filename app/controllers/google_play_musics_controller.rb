@@ -2,6 +2,8 @@
 
 class GooglePlayMusicsController < ApplicationController
   before_action :set_google_play_music, only: %i[show edit update destroy]
+  before_action :authenticate_user!
+
 
   # GET /google_play_musics
   # GET /google_play_musics.json
@@ -15,7 +17,7 @@ class GooglePlayMusicsController < ApplicationController
 
   # GET /google_play_musics/new
   def new
-    @google_play_music = GooglePlayMusic.new
+    @google_play_music = current_user.google_play_musics.build
   end
 
   # GET /google_play_musics/1/edit
@@ -24,7 +26,7 @@ class GooglePlayMusicsController < ApplicationController
   # POST /google_play_musics
   # POST /google_play_musics.json
   def create
-    @google_play_music = GooglePlayMusic.new(google_play_music_params)
+    @google_play_music = current_user.google_play_musics.build(google_play_music_params)
 
     respond_to do |format|
       if @google_play_music.save

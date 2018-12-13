@@ -2,6 +2,8 @@
 
 class AmazonKindleUnlimitedsController < ApplicationController
   before_action :set_amazon_kindle_unlimited, only: %i[show edit update destroy]
+  before_action :authenticate_user!
+
 
   # GET /amazon_kindle_unlimiteds
   # GET /amazon_kindle_unlimiteds.json
@@ -15,7 +17,7 @@ class AmazonKindleUnlimitedsController < ApplicationController
 
   # GET /amazon_kindle_unlimiteds/new
   def new
-    @amazon_kindle_unlimited = AmazonKindleUnlimited.new
+    @amazon_kindle_unlimited = current_user.amazon_kindle_unlimiteds.build
   end
 
   # GET /amazon_kindle_unlimiteds/1/edit
@@ -24,7 +26,7 @@ class AmazonKindleUnlimitedsController < ApplicationController
   # POST /amazon_kindle_unlimiteds
   # POST /amazon_kindle_unlimiteds.json
   def create
-    @amazon_kindle_unlimited = AmazonKindleUnlimited.new(amazon_kindle_unlimited_params)
+    @amazon_kindle_unlimited = current_user.amazon_kindle_unlimiteds.build(amazon_kindle_unlimited_params)
 
     respond_to do |format|
       if @amazon_kindle_unlimited.save

@@ -16,7 +16,7 @@ class HulusController < ApplicationController
 
   # GET /hulus/new
   def new
-    @hulu = Hulu.new
+    @hulu = current_user.hulus.build
   end
 
   # GET /hulus/1/edit
@@ -25,7 +25,7 @@ class HulusController < ApplicationController
   # POST /hulus
   # POST /hulus.json
   def create
-    @hulu = Hulu.new(hulu_params)
+    @hulu = current_user.hulus.build(hulu_params)
 
     respond_to do |format|
       if @hulu.save

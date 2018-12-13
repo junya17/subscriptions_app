@@ -1,40 +1,64 @@
 <h1>利用サービス一覧</h1>
 
+<% @amazon_prime.each do | prime |%>
+<% if current_user.id == prime.user_id %>
 <ul class="list-group list-group-flush">
-<% if @amazon_prime %>
-<li class="list-group-item item">AmazoncPrime: <%= @amazon_prime.price.to_s(:delimited) %>円</li>
-<% end %>
+	<li class="list-group-item item">AmazoncPrime:
+		<%= prime.price.to_s(:delimited) %>円</li>
+	<% end %>
+	<% end %>
 
-<% if @amazon_music %>
-<li class="list-group-item item">AmazonMusic: <%= @amazon_music.price.to_s(:delimited) %>円</li>
-<% end %>
+	<% @amazon_music.each do | music |%>
+	<% if current_user.id == music.user_id %>
+	<li class="list-group-item item">AmazonMusic:
+		<%= music.price.to_s(:delimited) %>円</li>
+	<% end %>
+	<% end %>
 
-<% if @amazon_kindle %>
-<li class="list-group-item item">AmazonKindle: <%= @amazon_kindle.price.to_s(:delimited) %>円</li>
-<% end %>
+	<% @amazon_kindle.each do | kindle |%>
+	<% if current_user.id == kindle.user_id %>
+	<li class="list-group-item item">AmazonKindle:
+		<%= kindle.price.to_s(:delimited) %>円</li>
+	<% end %>
+	<% end %>
 
-<% if @google_play %>
-<li class="list-group-item item">GooglePlay: <%= @google_play.price.to_s(:delimited) %>円</li>
-<% end %>
+	<% @google_play.each do | play |%>
+	<% if current_user.id == play.user_id %>
+	<li class="list-group-item item">GooglePlay:
+		<%= play.price.to_s(:delimited) %>円</li>
+	<% end %>
+	<% end %>
 
-<% if @hulu %>
-<li class="list-group-item item">Hulu: <%= @hulu.price.to_s(:delimited) %>円</li>
-<% end %>
+	<% @hulu.each do | hulu |%>
+	<% if current_user.id == hulu.user_id %>
+	<li class="list-group-item item">Hulu:
+		<%= @hulu.price.to_s(:delimited) %>円</li>
+	<% end %>
+	<% end %>
 
-<% if @play_station %>
-<li class="list-group-item item">PlayStationNetwork: <%= @play_station.price.to_s(:delimited) %>円</li>
-<% end %>
+	<% @playstation.each do | pleste |%>
+	<% if current_user.id == pleste.user_id %>
+	<li class="list-group-item item">PlayStationNetwork:
+		<%= @play_station.price.to_s(:delimited) %>円</li>
+	<% end %>
+	<% end %>
 
-<% if @spotify %>
-<li class="list-group-item item">Sporify: <%= @spotify.price.to_s(:delimited) %>円</li>
-<% end %>
+	<% @spotify.each do | spotify |%>
+	<% if current_user.id == sporify.user_id %>
+	<li class="list-group-item item">Sporify:
+		<%= @spotify.price.to_s(:delimited) %>円</li>
+	<% end %>
+	<% end %>
 
-<% if @unext %>
-<li class="list-group-item item">U-NEXT: <%= @unext.price.to_s(:delimited) %>円</li>
-<% end %>
-
-
+	<% @unext.each do | unext |%>
+	<% if current_user.id == unext.user_id %>
+	<li class="list-group-item item">U-NEXT:
+		<%= @unext.price.to_s(:delimited) %>円</li>
+	<% end %>
+	<% end %>
 
 </ul>
 
-<div class="total-cost">合計金額: <%= @total.to_s(:delimited) %>円</div>
+
+<div class="total-cost">合計金額:
+	<%= @total.to_s(:delimited) %>円</div>

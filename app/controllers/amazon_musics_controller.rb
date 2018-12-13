@@ -2,6 +2,8 @@
 
 class AmazonMusicsController < ApplicationController
   before_action :set_amazon_music, only: %i[show edit update destroy]
+  before_action :authenticate_user!
+
 
   # GET /amazon_musics
   # GET /amazon_musics.json
@@ -15,7 +17,7 @@ class AmazonMusicsController < ApplicationController
 
   # GET /amazon_musics/new
   def new
-    @amazon_music = AmazonMusic.new
+    @amazon_music = current_user.amazon_musics.build
   end
 
   # GET /amazon_musics/1/edit
@@ -24,7 +26,7 @@ class AmazonMusicsController < ApplicationController
   # POST /amazon_musics
   # POST /amazon_musics.json
   def create
-    @amazon_music = AmazonMusic.new(amazon_music_params)
+    @amazon_music = current_user.amazon_musics.build(amazon_music_params)
 
     respond_to do |format|
       if @amazon_music.save

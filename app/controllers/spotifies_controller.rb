@@ -2,6 +2,7 @@
 
 class SpotifiesController < ApplicationController
   before_action :set_spotify, only: %i[show edit update destroy]
+  before_action :authenticate_user!
 
   # GET /spotifies
   # GET /spotifies.json
@@ -15,7 +16,7 @@ class SpotifiesController < ApplicationController
 
   # GET /spotifies/new
   def new
-    @spotify = Spotify.new
+    @spotify = current_user.spotifies.build
   end
 
   # GET /spotifies/1/edit
@@ -24,7 +25,7 @@ class SpotifiesController < ApplicationController
   # POST /spotifies
   # POST /spotifies.json
   def create
-    @spotify = Spotify.new(spotify_params)
+    @spotify = current_user.spotifies.build(spotify_params)
 
     respond_to do |format|
       if @spotify.save
