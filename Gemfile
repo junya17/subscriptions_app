@@ -30,7 +30,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
-
+gem 'concurrent-ruby', '~> 1.1', '>= 1.1.3'
 ## Add Gem
 gem 'devise', '~> 4.5'
 gem 'font-awesome-rails'
