@@ -32,28 +32,28 @@
 	<% @hulu.each do | hulu |%>
 	<% if current_user.id == hulu.user_id %>
 	<li class="list-group-item item">Hulu:
-		<%= @hulu.price.to_s(:delimited) %>円</li>
+		<%= hulu.price.to_s(:delimited) %>円</li>
 	<% end %>
 	<% end %>
 
 	<% @playstation.each do | pleste |%>
 	<% if current_user.id == pleste.user_id %>
 	<li class="list-group-item item">PlayStationNetwork:
-		<%= @play_station.price.to_s(:delimited) %>円</li>
+		<%= play_station.price.to_s(:delimited) %>円</li>
 	<% end %>
 	<% end %>
 
 	<% @spotify.each do | spotify |%>
-	<% if current_user.id == sporify.user_id %>
-	<li class="list-group-item item">Sporify:
-		<%= @spotify.price.to_s(:delimited) %>円</li>
+	<% if current_user.id == spotify.user_id %>
+	<li class="list-group-item item">Spotify:
+		<%= spotify.price.to_s(:delimited) %>円</li>
 	<% end %>
 	<% end %>
 
 	<% @unext.each do | unext |%>
 	<% if current_user.id == unext.user_id %>
 	<li class="list-group-item item">U-NEXT:
-		<%= @unext.price.to_s(:delimited) %>円</li>
+		<%= unext.price.to_s(:delimited) %>円</li>
 	<% end %>
 	<% end %>
 
