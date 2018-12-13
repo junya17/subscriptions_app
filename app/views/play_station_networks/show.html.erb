@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @play_station_network.price %>
+</p>
+
+<p>
+  <strong>Issue date:</strong>
+  <%= @play_station_network.issue_date %>
+</p>
+
+<p>
+  <strong>Update period:</strong>
+  <%= @play_station_network.update_period %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @play_station_network.status %>
+</p>
+
+<p>
+  <strong>Memo:</strong>
+  <%= @play_station_network.memo %>
+</p>
+
+<%= link_to 'Edit', edit_play_station_network_path(@play_station_network) %> |
+<%= link_to 'Back', play_station_networks_path %>

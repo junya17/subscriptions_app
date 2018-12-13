@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @unext.price %>
+</p>
+
+<p>
+  <strong>Issue date:</strong>
+  <%= @unext.issue_date %>
+</p>
+
+<p>
+  <strong>Update period:</strong>
+  <%= @unext.update_period %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @unext.status %>
+</p>
+
+<p>
+  <strong>Memo:</strong>
+  <%= @unext.memo %>
+</p>
+
+<%= link_to 'Edit', edit_unext_path(@unext) %> |
+<%= link_to 'Back', unexts_path %>

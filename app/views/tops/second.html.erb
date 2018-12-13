@@ -1,0 +1,68 @@
+<h1>サービスを選ぶ</h1>
+<ul class="list-group list-group-flush">
+	<li class="list-group-item">
+		<p class="item">AmazonPrime:
+			<% if @amazon_primes.empty? %>
+			<%= link_to '+', new_amazon_prime_path , class: "button"%>
+			<% else %>
+			<%= link_to '-', amazon_prime_path(@amazon_prime), method: :delete, class: "button" %>
+			<%end%>
+		</p>
+	</li>
+	<li class="list-group-item">
+		<p class="item">AmazonMusic:
+			<% if @amazon_musics.empty? %>
+			<%= link_to '+', new_amazon_music_path , class: "button"%>
+			<% else %>
+			<%= link_to '-', amazon_music_path(@amazon_music), method: :delete, class: "button" %>
+			<%end%>
+		</p>
+	</li>
+	<li class="list-group-item">
+		<p class="item">Amazonkindle:
+			<% if @amazon_kindles.empty? %>
+			<%= link_to '+', new_amazon_kindle_unlimited_path , class: "button"%>
+			<% else %>
+			<%= link_to '-', amazon_kindle_unlimited_path(@amazon_kindle), method: :delete, class: "button" %>
+			<%end%>
+		</p>
+	</li>
+	<li class="list-group-item">
+		<p class="item">GooglePlay:
+			<% if @google_plays.empty? %>
+			<%= link_to '+', new_google_play_music_path , class: "button"%>
+			<% else %>
+			<%= link_to '-', google_play_music_path(@google_play), method: :delete, class: "button" %>
+			<%end%>
+		</p>
+	</li>
+	<li class="list-group-item">
+		<p class="item">Hulu:
+			<% if @hulus.empty? %>
+			<%= link_to '+', new_hulu_path , class: "button"%>
+			<% else %>
+			<%= link_to '-', hulu_path(@hulu), method: :delete, class: "button" %>
+			<%end%>
+		</p>
+	</li>
+	
+	<li class="list-group-item">
+		<p class="item">Spotify:
+			<% if @spotifies.empty? %>
+			<%= link_to '+', new_spotify_path , class: "button"%>
+			<% else %>
+			<%= link_to '-', spotify_path(@spotify), method: :delete, class: "button" %>
+			<%end%>
+		</p>
+	</li>
+	<li class="list-group-item">
+		<p class="item">U-NEXT:
+			<% if @unexts.empty? %>
+			<%= link_to '+', new_unext_path , class: "button"%>
+			<% else %>
+			<%= link_to '-', unext_path(@unext), method: :delete, class: "button" %>
+			<%end%>
+		</p>
+	</li>
+	
+</ul>

@@ -1,0 +1,12 @@
+<p>
+  <strong>Name:</strong>
+  <%= @amazon.name %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @amazon.price %>
+</p>
+
+<%= link_to 'Edit', edit_amazon_path(@amazon) %> |
+<%= link_to 'Back', amazons_path %>

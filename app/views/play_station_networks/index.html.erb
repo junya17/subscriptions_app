@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Play Station Networks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Price</th>
+      <th>Issue date</th>
+      <th>Update period</th>
+      <th>Status</th>
+      <th>Memo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @play_station_networks.each do |play_station_network| %>
+      <tr>
+        <td><%= play_station_network.price %></td>
+        <td><%= play_station_network.issue_date %></td>
+        <td><%= play_station_network.update_period %></td>
+        <td><%= play_station_network.status %></td>
+        <td><%= play_station_network.memo %></td>
+        <td><%= link_to 'Show', play_station_network %></td>
+        <td><%= link_to 'Edit', edit_play_station_network_path(play_station_network) %></td>
+        <td><%= link_to 'Destroy', play_station_network, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Play Station Network', new_play_station_network_path %>

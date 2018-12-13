@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Amazon Musics</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Price</th>
+      <th>Issue date</th>
+      <th>Update period</th>
+      <th>Status</th>
+      <th>Memo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @amazon_musics.each do |amazon_music| %>
+      <tr>
+        <td><%= amazon_music.price %></td>
+        <td><%= amazon_music.issue_date %></td>
+        <td><%= amazon_music.update_period %></td>
+        <td><%= amazon_music.status %></td>
+        <td><%= amazon_music.memo %></td>
+        <td><%= link_to 'Show', amazon_music %></td>
+        <td><%= link_to 'Edit', edit_amazon_music_path(amazon_music) %></td>
+        <td><%= link_to 'Destroy', amazon_music, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Amazon Music', new_amazon_music_path %>

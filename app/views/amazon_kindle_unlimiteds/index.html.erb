@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Amazon Kindle Unlimiteds</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Price</th>
+      <th>Issue date</th>
+      <th>Update period</th>
+      <th>Status</th>
+      <th>Memo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @amazon_kindle_unlimiteds.each do |amazon_kindle_unlimited| %>
+      <tr>
+        <td><%= amazon_kindle_unlimited.price %></td>
+        <td><%= amazon_kindle_unlimited.issue_date %></td>
+        <td><%= amazon_kindle_unlimited.update_period %></td>
+        <td><%= amazon_kindle_unlimited.status %></td>
+        <td><%= amazon_kindle_unlimited.memo %></td>
+        <td><%= link_to 'Show', amazon_kindle_unlimited %></td>
+        <td><%= link_to 'Edit', edit_amazon_kindle_unlimited_path(amazon_kindle_unlimited) %></td>
+        <td><%= link_to 'Destroy', amazon_kindle_unlimited, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Amazon Kindle Unlimited', new_amazon_kindle_unlimited_path %>

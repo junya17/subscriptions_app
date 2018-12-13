@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Amazon Primes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Price</th>
+      <th>Issue date</th>
+      <th>Update period</th>
+      <th>Status</th>
+      <th>Memo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @amazon_primes.each do |amazon_prime| %>
+      <tr>
+        <td><%= amazon_prime.price %></td>
+        <td><%= amazon_prime.issue_date %></td>
+        <td><%= amazon_prime.update_period %></td>
+        <td><%= amazon_prime.status %></td>
+        <td><%= amazon_prime.memo %></td>
+        <td><%= link_to 'Show', amazon_prime %></td>
+        <td><%= link_to 'Edit', edit_amazon_prime_path(amazon_prime) %></td>
+        <td><%= link_to 'Destroy', amazon_prime, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Amazon Prime', new_amazon_prime_path %>

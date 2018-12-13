@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Google Play Musics</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Price</th>
+      <th>Issue date</th>
+      <th>Update period</th>
+      <th>Status</th>
+      <th>Memo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @google_play_musics.each do |google_play_music| %>
+      <tr>
+        <td><%= google_play_music.price %></td>
+        <td><%= google_play_music.issue_date %></td>
+        <td><%= google_play_music.update_period %></td>
+        <td><%= google_play_music.status %></td>
+        <td><%= google_play_music.memo %></td>
+        <td><%= link_to 'Show', google_play_music %></td>
+        <td><%= link_to 'Edit', edit_google_play_music_path(google_play_music) %></td>
+        <td><%= link_to 'Destroy', google_play_music, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Google Play Music', new_google_play_music_path %>

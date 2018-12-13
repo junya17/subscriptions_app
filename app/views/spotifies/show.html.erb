@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @spotify.price %>
+</p>
+
+<p>
+  <strong>Issue date:</strong>
+  <%= @spotify.issue_date %>
+</p>
+
+<p>
+  <strong>Update period:</strong>
+  <%= @spotify.update_period %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @spotify.status %>
+</p>
+
+<p>
+  <strong>Memo:</strong>
+  <%= @spotify.memo %>
+</p>
+
+<%= link_to 'Edit', edit_spotify_path(@spotify) %> |
+<%= link_to 'Back', spotifies_path %>

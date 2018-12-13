@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @google_play_music.price %>
+</p>
+
+<p>
+  <strong>Issue date:</strong>
+  <%= @google_play_music.issue_date %>
+</p>
+
+<p>
+  <strong>Update period:</strong>
+  <%= @google_play_music.update_period %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @google_play_music.status %>
+</p>
+
+<p>
+  <strong>Memo:</strong>
+  <%= @google_play_music.memo %>
+</p>
+
+<%= link_to 'Edit', edit_google_play_music_path(@google_play_music) %> |
+<%= link_to 'Back', google_play_musics_path %>

@@ -1,0 +1,40 @@
+<h1>利用サービス一覧</h1>
+
+<ul class="list-group list-group-flush">
+<% if @amazon_prime %>
+<li class="list-group-item item">AmazoncPrime: <%= @amazon_prime.price.to_s(:delimited) %>円</li>
+<% end %>
+
+<% if @amazon_music %>
+<li class="list-group-item item">AmazonMusic: <%= @amazon_music.price.to_s(:delimited) %>円</li>
+<% end %>
+
+<% if @amazon_kindle %>
+<li class="list-group-item item">AmazonKindle: <%= @amazon_kindle.price.to_s(:delimited) %>円</li>
+<% end %>
+
+<% if @google_play %>
+<li class="list-group-item item">GooglePlay: <%= @google_play.price.to_s(:delimited) %>円</li>
+<% end %>
+
+<% if @hulu %>
+<li class="list-group-item item">Hulu: <%= @hulu.price.to_s(:delimited) %>円</li>
+<% end %>
+
+<% if @play_station %>
+<li class="list-group-item item">PlayStationNetwork: <%= @play_station.price.to_s(:delimited) %>円</li>
+<% end %>
+
+<% if @spotify %>
+<li class="list-group-item item">Sporify: <%= @spotify.price.to_s(:delimited) %>円</li>
+<% end %>
+
+<% if @unext %>
+<li class="list-group-item item">U-NEXT: <%= @unext.price.to_s(:delimited) %>円</li>
+<% end %>
+
+
+
+</ul>
+
+<div class="total-cost">合計金額: <%= @total.to_s(:delimited) %>円</div>

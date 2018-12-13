@@ -1,0 +1,25 @@
+<%= form_with(model: service, local: true) do |form| %> 
+  <div class="field form-group">
+    <%= form.number_field :price ,placeholder: "価格" ,required: true ,class: "form-control"%>
+  </div>
+
+  <div class="field form-group">
+    <%= form.date_select :issue_date%>
+  </div>
+
+  <div class="field form-group">
+    <%= form.number_field :update_period ,placeholder: "更新期間" ,class: "form-control"%>
+  </div>
+
+  <div class="field form-group">
+    <%= form.text_field :status ,placeholder: "無料期間？有料期間？" ,class: "form-control"%>
+  </div>
+
+  <div class="field form-group">
+    <%= form.text_area :memo ,placeholder: "更新期間" ,class: "form-control" ,rows:"3"%>
+  </div>
+
+  <div class="actions form-group">
+    <%= form.submit class: "btn btn-primary" %>
+  </div>
+  <% end %>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @amazon_prime.price %>
+</p>
+
+<p>
+  <strong>Issue date:</strong>
+  <%= @amazon_prime.issue_date %>
+</p>
+
+<p>
+  <strong>Update period:</strong>
+  <%= @amazon_prime.update_period %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @amazon_prime.status %>
+</p>
+
+<p>
+  <strong>Memo:</strong>
+  <%= @amazon_prime.memo %>
+</p>
+
+<%= link_to 'Edit', edit_amazon_prime_path(@amazon_prime) %> |
+<%= link_to 'Back', amazon_primes_path %>

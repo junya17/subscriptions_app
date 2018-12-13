@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Unexts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Price</th>
+      <th>Issue date</th>
+      <th>Update period</th>
+      <th>Status</th>
+      <th>Memo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @unexts.each do |unext| %>
+      <tr>
+        <td><%= unext.price %></td>
+        <td><%= unext.issue_date %></td>
+        <td><%= unext.update_period %></td>
+        <td><%= unext.status %></td>
+        <td><%= unext.memo %></td>
+        <td><%= link_to 'Show', unext %></td>
+        <td><%= link_to 'Edit', edit_unext_path(unext) %></td>
+        <td><%= link_to 'Destroy', unext, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Unext', new_unext_path %>

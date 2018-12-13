@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @hulu.name %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @hulu.price %>
+</p>
+
+<%= link_to 'Edit', edit_hulu_path(@hulu) %> |
+<%= link_to 'Back', hulus_path %>

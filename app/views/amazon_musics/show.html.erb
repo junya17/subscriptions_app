@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @amazon_music.price %>
+</p>
+
+<p>
+  <strong>Issue date:</strong>
+  <%= @amazon_music.issue_date %>
+</p>
+
+<p>
+  <strong>Update period:</strong>
+  <%= @amazon_music.update_period %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @amazon_music.status %>
+</p>
+
+<p>
+  <strong>Memo:</strong>
+  <%= @amazon_music.memo %>
+</p>
+
+<%= link_to 'Edit', edit_amazon_music_path(@amazon_music) %> |
+<%= link_to 'Back', amazon_musics_path %>

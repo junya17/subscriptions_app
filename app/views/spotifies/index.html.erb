@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Spotifies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Price</th>
+      <th>Issue date</th>
+      <th>Update period</th>
+      <th>Status</th>
+      <th>Memo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @spotifies.each do |spotify| %>
+      <tr>
+        <td><%= spotify.price %></td>
+        <td><%= spotify.issue_date %></td>
+        <td><%= spotify.update_period %></td>
+        <td><%= spotify.status %></td>
+        <td><%= spotify.memo %></td>
+        <td><%= link_to 'Show', spotify %></td>
+        <td><%= link_to 'Edit', edit_spotify_path(spotify) %></td>
+        <td><%= link_to 'Destroy', spotify, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Spotify', new_spotify_path %>

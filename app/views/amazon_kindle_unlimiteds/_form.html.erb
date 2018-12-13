@@ -1,0 +1,42 @@
+<%= form_with(model: amazon_kindle_unlimited, local: true) do |form| %>
+  <% if amazon_kindle_unlimited.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(amazon_kindle_unlimited.errors.count, "error") %> prohibited this amazon_kindle_unlimited from being saved:</h2>
+
+      <ul>
+      <% amazon_kindle_unlimited.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.number_field :price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :issue_date %>
+    <%= form.date_select :issue_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :update_period %>
+    <%= form.number_field :update_period %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.text_field :status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :memo %>
+    <%= form.text_area :memo %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

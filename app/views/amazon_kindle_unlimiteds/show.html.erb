@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @amazon_kindle_unlimited.price %>
+</p>
+
+<p>
+  <strong>Issue date:</strong>
+  <%= @amazon_kindle_unlimited.issue_date %>
+</p>
+
+<p>
+  <strong>Update period:</strong>
+  <%= @amazon_kindle_unlimited.update_period %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @amazon_kindle_unlimited.status %>
+</p>
+
+<p>
+  <strong>Memo:</strong>
+  <%= @amazon_kindle_unlimited.memo %>
+</p>
+
+<%= link_to 'Edit', edit_amazon_kindle_unlimited_path(@amazon_kindle_unlimited) %> |
+<%= link_to 'Back', amazon_kindle_unlimiteds_path %>
