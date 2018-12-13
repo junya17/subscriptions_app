@@ -35,8 +35,6 @@ gem 'concurrent-ruby', '~> 1.1', '>= 1.1.3'
 gem 'devise', '~> 4.5'
 gem 'font-awesome-rails'
 gem 'gravatar_image_tag', '~> 1.2'
-gem 'rails-i18n'
-
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
