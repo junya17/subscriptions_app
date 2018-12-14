@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>D Tvs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Price</th>
+      <th>Date</th>
+      <th>Update period</th>
+      <th>Status</th>
+      <th>Memo</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @d_tvs.each do |d_tv| %>
+      <tr>
+        <td><%= d_tv.price %></td>
+        <td><%= d_tv.date %></td>
+        <td><%= d_tv.update_period %></td>
+        <td><%= d_tv.status %></td>
+        <td><%= d_tv.memo %></td>
+        <td><%= d_tv.user_id %></td>
+        <td><%= link_to 'Show', d_tv %></td>
+        <td><%= link_to 'Edit', edit_d_tv_path(d_tv) %></td>
+        <td><%= link_to 'Destroy', d_tv, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New D Tv', new_d_tv_path %>

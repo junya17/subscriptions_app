@@ -1,6 +1,14 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :apple_musics
+  resources :line_musics
+  resources :d_anime_stores
+  resources :au_video_passes
+  resources :fods
+  resources :d_tvs
+  resources :netflixes
+  resources :you_tube_premia
   resources :spotifies
   resources :unexts
   resources :play_station_networks

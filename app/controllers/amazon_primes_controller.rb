@@ -3,7 +3,7 @@
 class AmazonPrimesController < ApplicationController
   before_action :set_amazon_prime, only: %i[show edit update destroy]
   before_action :authenticate_user!
-  
+
   # GET /amazon_primes
   # GET /amazon_primes.json
   def index

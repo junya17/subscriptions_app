@@ -18,68 +18,65 @@ class TopsController < ApplicationController
 
     @spotify = Spotify.all
 
-    @unext = Unext.all    
+    @unext = Unext.all
 
     if AmazonPrime.find_by(user_id: current_user.id)
-    @amazon_prime_user = AmazonPrime.where(user_id: current_user.id).first
-    @amazon_prime_sum = @amazon_prime_user[:price]
+      @amazon_prime_user = AmazonPrime.where(user_id: current_user.id).first
+      @amazon_prime_sum = @amazon_prime_user[:price]
     else
       @amazon_prime_sum = 0
-    end 
+    end
 
     if AmazonMusic.find_by(user_id: current_user.id)
-        @amazon_music_user = AmazonMusic.where(user_id: current_user.id).first
-        @amazon_music_sum = @amazon_music_user[:price]  
+      @amazon_music_user = AmazonMusic.where(user_id: current_user.id).first
+      @amazon_music_sum = @amazon_music_user[:price]
     else
-      @amazon_music_sum = 0  
+      @amazon_music_sum = 0
     end
 
     if AmazonKindleUnlimited.find_by(user_id: current_user.id)
-    @amazon_kindle_user = AmazonKindleUnlimited.where(user_id: current_user.id).first
-    @amazon_kindle_sum = @amazon_kindle_user[:price] 
+      @amazon_kindle_user = AmazonKindleUnlimited.where(user_id: current_user.id).first
+      @amazon_kindle_sum = @amazon_kindle_user[:price]
     else
       @amazon_kindle_sum = 0
-    end   
+    end
 
     if GooglePlayMusic.find_by(user_id: current_user.id)
-   @google_play_user = GooglePlayMusic.where(user_id: current_user.id).first
-   @google_play_sum = @google_play_user[:price]  
+      @google_play_user = GooglePlayMusic.where(user_id: current_user.id).first
+      @google_play_sum = @google_play_user[:price]
     else
-      @google_play_sum =0 
-    end 
+      @google_play_sum = 0
+    end
 
     if Hulu.find_by(user_id: current_user.id)
-    @hulu_user = Hulu.where(user_id: current_user.id).first
-    @hulu_sum = @hulu_user[:price]    
+      @hulu_user = Hulu.where(user_id: current_user.id).first
+      @hulu_sum = @hulu_user[:price]
     else
       @hulu_sum = 0
     end
 
     if PlayStationNetwork.find_by(user_id: current_user.id)
-    @playstation_user = PlayStationNetwork.where(user_id: current_user.id).first
-    @playstation_sum = @playstation_user[:price]  
+      @playstation_user = PlayStationNetwork.where(user_id: current_user.id).first
+      @playstation_sum = @playstation_user[:price]
     else
-      @playstation_sum = 0  
+      @playstation_sum = 0
     end
 
     if Spotify.find_by(user_id: current_user.id)
-    @spotify_user = Spotify.where(user_id: current_user.id).first
-    @spotify_sum = @spotify_user[:price]  
+      @spotify_user = Spotify.where(user_id: current_user.id).first
+      @spotify_sum = @spotify_user[:price]
     else
       @spotify_sum = 0
     end
-    
+
     if Unext.find_by(user_id: current_user.id)
-    @unext_user = Unext.where(user_id: current_user.id).first
-    @unext_sum = @unext_user[:price]  
+      @unext_user = Unext.where(user_id: current_user.id).first
+      @unext_sum = @unext_user[:price]
     else
       @unext_sum = 0
     end
-    
 
-
-@total = @amazon_prime_sum + @amazon_music_sum + @amazon_kindle_sum + @google_play_sum + @hulu_sum + @playstation_sum + @spotify_sum + @unext_sum
-
+    @total = @amazon_prime_sum + @amazon_music_sum + @amazon_kindle_sum + @google_play_sum + @hulu_sum + @playstation_sum + @spotify_sum + @unext_sum
   end
 
   def second
@@ -90,7 +87,7 @@ class TopsController < ApplicationController
     @amazon_musics = AmazonMusic.all
     @amazon_music = AmazonMusic.first
     @music_user = AmazonMusic.find_by(user_id: current_user.id)
-      
+
     @amazon_kindles = AmazonKindleUnlimited.all
     @amazon_kindle = AmazonKindleUnlimited.first
     @kindle_user = AmazonKindleUnlimited.find_by(user_id: current_user.id)
@@ -114,6 +111,5 @@ class TopsController < ApplicationController
     @unexts = Unext.all
     @unext = Unext.first
     @unext_user = Unext.find_by(user_id: current_user.id)
-
   end
 end

@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Au Video Passes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Price</th>
+      <th>Date</th>
+      <th>Update period</th>
+      <th>Status</th>
+      <th>Memo</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @au_video_passes.each do |au_video_pass| %>
+      <tr>
+        <td><%= au_video_pass.price %></td>
+        <td><%= au_video_pass.date %></td>
+        <td><%= au_video_pass.update_period %></td>
+        <td><%= au_video_pass.status %></td>
+        <td><%= au_video_pass.memo %></td>
+        <td><%= au_video_pass.user_id %></td>
+        <td><%= link_to 'Show', au_video_pass %></td>
+        <td><%= link_to 'Edit', edit_au_video_pass_path(au_video_pass) %></td>
+        <td><%= link_to 'Destroy', au_video_pass, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Au Video Pass', new_au_video_pass_path %>

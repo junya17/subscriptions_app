@@ -1,5 +1,4 @@
 <h1>利用サービス一覧</h1>
-
 <% @amazon_prime.each do | prime |%>
 <% if current_user.id == prime.user_id %>
 <ul class="list-group list-group-flush">
@@ -47,6 +46,20 @@
 	<% if current_user.id == spotify.user_id %>
 	<li class="list-group-item item"><%= link_to 'Spotify:', spotify_path(spotify) %>
 		<p class="price"><%= spotify.price.to_s(:delimited)%>円</p></li>
+	<% end %>
+	<% end %>
+
+	<% @unext.each do | unext |%>
+	<% if current_user.id == unext.user_id %>
+	<li class="list-group-item item"><%= link_to 'U-NEXT:', unext_path(unext) %>
+		<p class="price"><%= unext.price.to_s(:delimited)%>円</p></li>
+	<% end %>
+	<% end %>
+
+	<% @unext.each do | unext |%>
+	<% if current_user.id == unext.user_id %>
+	<li class="list-group-item item"><%= link_to 'U-NEXT:', unext_path(unext) %>
+		<p class="price"><%= unext.price.to_s(:delimited)%>円</p></li>
 	<% end %>
 	<% end %>
 

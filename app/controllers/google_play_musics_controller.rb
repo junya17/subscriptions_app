@@ -4,7 +4,6 @@ class GooglePlayMusicsController < ApplicationController
   before_action :set_google_play_music, only: %i[show edit update destroy]
   before_action :authenticate_user!
 
-
   # GET /google_play_musics
   # GET /google_play_musics.json
   def index

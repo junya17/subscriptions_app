@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Fods</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Price</th>
+      <th>Date</th>
+      <th>Update period</th>
+      <th>Status</th>
+      <th>Memo</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fods.each do |fod| %>
+      <tr>
+        <td><%= fod.price %></td>
+        <td><%= fod.date %></td>
+        <td><%= fod.update_period %></td>
+        <td><%= fod.status %></td>
+        <td><%= fod.memo %></td>
+        <td><%= fod.user_id %></td>
+        <td><%= link_to 'Show', fod %></td>
+        <td><%= link_to 'Edit', edit_fod_path(fod) %></td>
+        <td><%= link_to 'Destroy', fod, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fod', new_fod_path %>

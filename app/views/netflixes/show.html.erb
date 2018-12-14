@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @netflix.price %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @netflix.date %>
+</p>
+
+<p>
+  <strong>Update period:</strong>
+  <%= @netflix.update_period %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @netflix.status %>
+</p>
+
+<p>
+  <strong>Memo:</strong>
+  <%= @netflix.memo %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @netflix.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_netflix_path(@netflix) %> |
+<%= link_to 'Back', netflixes_path %>

@@ -4,7 +4,6 @@ class AmazonKindleUnlimitedsController < ApplicationController
   before_action :set_amazon_kindle_unlimited, only: %i[show edit update destroy]
   before_action :authenticate_user!
 
-
   # GET /amazon_kindle_unlimiteds
   # GET /amazon_kindle_unlimiteds.json
   def index

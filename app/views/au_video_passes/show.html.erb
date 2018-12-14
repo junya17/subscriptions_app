@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @au_video_pass.price %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @au_video_pass.date %>
+</p>
+
+<p>
+  <strong>Update period:</strong>
+  <%= @au_video_pass.update_period %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @au_video_pass.status %>
+</p>
+
+<p>
+  <strong>Memo:</strong>
+  <%= @au_video_pass.memo %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @au_video_pass.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_au_video_pass_path(@au_video_pass) %> |
+<%= link_to 'Back', au_video_passes_path %>

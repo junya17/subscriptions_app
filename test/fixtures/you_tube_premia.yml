@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  price: 1
+  date: 2018-12-14
+  update_period: 1
+  status: MyString
+  memo: MyText
+  user_id: 1
+
+two:
+  price: 1
+  date: 2018-12-14
+  update_period: 1
+  status: MyString
+  memo: MyText
+  user_id: 1

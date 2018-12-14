@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Netflixes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Price</th>
+      <th>Date</th>
+      <th>Update period</th>
+      <th>Status</th>
+      <th>Memo</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @netflixes.each do |netflix| %>
+      <tr>
+        <td><%= netflix.price %></td>
+        <td><%= netflix.date %></td>
+        <td><%= netflix.update_period %></td>
+        <td><%= netflix.status %></td>
+        <td><%= netflix.memo %></td>
+        <td><%= netflix.user_id %></td>
+        <td><%= link_to 'Show', netflix %></td>
+        <td><%= link_to 'Edit', edit_netflix_path(netflix) %></td>
+        <td><%= link_to 'Destroy', netflix, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Netflix', new_netflix_path %>

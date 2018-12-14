@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @line_music.price %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @line_music.date %>
+</p>
+
+<p>
+  <strong>Update period:</strong>
+  <%= @line_music.update_period %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @line_music.status %>
+</p>
+
+<p>
+  <strong>Memo:</strong>
+  <%= @line_music.memo %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @line_music.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_line_music_path(@line_music) %> |
+<%= link_to 'Back', line_musics_path %>

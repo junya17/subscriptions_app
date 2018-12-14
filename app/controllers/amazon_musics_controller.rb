@@ -4,7 +4,6 @@ class AmazonMusicsController < ApplicationController
   before_action :set_amazon_music, only: %i[show edit update destroy]
   before_action :authenticate_user!
 
-
   # GET /amazon_musics
   # GET /amazon_musics.json
   def index
