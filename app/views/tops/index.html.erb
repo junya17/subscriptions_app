@@ -56,19 +56,6 @@
 	<% end %>
 	<% end %>
 
-	<% @unext.each do | unext |%>
-	<% if current_user.id == unext.user_id %>
-	<li class="list-group-item item"><%= link_to 'U-NEXT:', unext_path(unext) %>
-		<p class="price"><%= unext.price.to_s(:delimited)%>円</p></li>
-	<% end %>
-	<% end %>
-
-	<% @unext.each do | unext |%>
-	<% if current_user.id == unext.user_id %>
-	<li class="list-group-item item"><%= link_to 'U-NEXT:', unext_path(unext) %>
-		<p class="price"><%= unext.price.to_s(:delimited)%>円</p></li>
-	<% end %>
-	<% end %>
 </ul>
 
 
