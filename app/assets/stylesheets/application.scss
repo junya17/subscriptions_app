@@ -16,8 +16,20 @@
 
  @import "bootstrap";
 
+ .container {
+	 max-width: 500px;
+ }
+
  * {
 	 
+ }
+
+ .button {
+	 float: right;
+ }
+
+ .price {
+	 float: right;
  }
 
  .item {
