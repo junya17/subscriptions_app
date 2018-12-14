@@ -1,11 +1,1 @@
-<ul class="list-group">
-  <li class="list-group-item"><strong>Name:</strong>Spotify</li>
-  <li class="list-group-item"> <strong>Price:</strong><%= @spotify.price %></li>
-  <li class="list-group-item"><strong>Issue date:</strong><%= @spotify.issue_date %></li>
-  <li class="list-group-item"><strong>Update period:</strong><%= @spotify.update_period %></li>
-  <li class="list-group-item"><strong>Status:</strong><%= @spotify.status %></li>
-  <li class="list-group-item"><strong>Memo:</strong><%= @spotify.memo %></li>
-</ul>
-
-<%= link_to 'Edit', edit_spotify_path(@spotify) %> |
-<%= link_to 'Back', spotifies_path %>
+<%= render 'layouts/show', name: 'Spotify', url: @spotify %>

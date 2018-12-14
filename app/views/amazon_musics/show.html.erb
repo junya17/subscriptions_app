@@ -1,12 +1,1 @@
-<ul class="list-group">
-  <li class="list-group-item"><strong>Name:</strong>AmazonMusic</li>
-  <li class="list-group-item"><strong>Price:</strong><%= @amazon_music.price %></li>
-  <li class="list-group-item"><strong>Issue date:</strong><%= @amazon_music.issue_date %></li>
-  <li class="list-group-item"><strong>Update period:</strong><%= @amazon_music.update_period %></li>
-  <li class="list-group-item"><strong>Status:</strong><%= @amazon_music.status %></li>
-  <li class="list-group-item">  <strong>Memo:</strong><%= @amazon_music.memo %>
-  </li>
-</ul>
-
-<%= link_to 'Edit', edit_amazon_music_path(@amazon_music) %> |
-<%= link_to 'Back', amazon_musics_path %>
+<%= render 'layouts/show', name: 'AmazonMusic', url: @amazon_music %>

@@ -1,12 +1,1 @@
-<ul class="list-group">
-  <li class="list-group-item"><strong>Name:</strong>Hulu</li>
-  <li class="list-group-item"><strong>Price:</strong><%= @hulu.price %></li>
-  <li class="list-group-item"><strong>Issue date:</strong><%= @hulu.issue_date %></li>
-  <li class="list-group-item"><strong>Update period:</strong><%= @hulu.update_period %></li>
-  <li class="list-group-item"><strong>Status:</strong><%= @hulu.status %></li>
-  <li class="list-group-item">  <strong>Memo:</strong><%= @hulu.memo %>
-  </li>
-</ul>
-
-<%= link_to 'Edit', edit_hulu_path(@hulu) %> |
-<%= link_to 'Back', hulus_path %>
+<%= render 'layouts/show', name: 'Hulu', url: @hulu %>

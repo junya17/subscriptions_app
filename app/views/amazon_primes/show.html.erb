@@ -1,11 +1,1 @@
-<ul class="list-group">
-  <li class="list-group-item"><strong>Name:</strong>AmazonPrime</li>
-  <li class="list-group-item"><strong>Price:</strong><%= @amazon_prime.price %></li>
-  <li class="list-group-item"><strong>Issue date:</strong><%= @amazon_prime.issue_date %></li>
-  <li class="list-group-item"><strong>Update period:</strong><%= @amazon_prime.update_period %></li>
-  <li class="list-group-item"><strong>Status:</strong><%= @amazon_prime.status %></li>
-  <li class="list-group-item">  <strong>Memo:</strong><%= @amazon_prime.memo %>
-  </li>
-</ul>
-
-
+<%= render 'layouts/show', name: 'AmazonPrime', url: @amazon_prime %>
