@@ -58,7 +58,7 @@
 		<p class="item">
 			GooglePlay:
 			<% if @google_plays.empty? %>
-			<%= link_to '+',new_google_play_music_path , class: "button" do%>
+			<%= link_to new_google_play_music_path , class: "button" do%>
 			<i class="fa fa-plus"></i>
 			<% end %>
 			<% elsif@google_plays.find_by(user_id: current_user.id)%>
