@@ -1,29 +1,22 @@
-<p id="notice"><%= notice %></p>
+<ul class="list-group">
+  <li class="list-group-item"><strong>name</strong>PlayStationNetwork</li>
+  <li class="list-group-item"><strong>Price:</strong>
+    <%= @play_station_network.price %>
+  </li>
+  <li class="list-group-item"><strong>Issue date:</strong>
+    <%= @play_station_network.issue_date %>
+  </li>
+  <li class="list-group-item"><strong>Update period:</strong>
+    <%= @play_station_network.update_period %>
+  </li>
+  <li class="list-group-item"><strong>Status:</strong>
+    <%= @play_station_network.status %>
+  </li>
+  <li class="list-group-item"><strong>Memo:</strong>
+    <%= @play_station_network.memo %>
 
-<p>
-  <strong>Price:</strong>
-  <%= @play_station_network.price %>
-</p>
-
-<p>
-  <strong>Issue date:</strong>
-  <%= @play_station_network.issue_date %>
-</p>
-
-<p>
-  <strong>Update period:</strong>
-  <%= @play_station_network.update_period %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @play_station_network.status %>
-</p>
-
-<p>
-  <strong>Memo:</strong>
-  <%= @play_station_network.memo %>
-</p>
+  </li>
+</ul>
 
 <%= link_to 'Edit', edit_play_station_network_path(@play_station_network) %> |
 <%= link_to 'Back', play_station_networks_path %>

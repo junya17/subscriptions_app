@@ -1,29 +1,12 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @amazon_music.price %>
-</p>
-
-<p>
-  <strong>Issue date:</strong>
-  <%= @amazon_music.issue_date %>
-</p>
-
-<p>
-  <strong>Update period:</strong>
-  <%= @amazon_music.update_period %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @amazon_music.status %>
-</p>
-
-<p>
-  <strong>Memo:</strong>
-  <%= @amazon_music.memo %>
-</p>
+<ul class="list-group">
+  <li class="list-group-item"><strong>Name:</strong>AmazonMusic</li>
+  <li class="list-group-item"><strong>Price:</strong><%= @amazon_music.price %></li>
+  <li class="list-group-item"><strong>Issue date:</strong><%= @amazon_music.issue_date %></li>
+  <li class="list-group-item"><strong>Update period:</strong><%= @amazon_music.update_period %></li>
+  <li class="list-group-item"><strong>Status:</strong><%= @amazon_music.status %></li>
+  <li class="list-group-item">  <strong>Memo:</strong><%= @amazon_music.memo %>
+  </li>
+</ul>
 
 <%= link_to 'Edit', edit_amazon_music_path(@amazon_music) %> |
 <%= link_to 'Back', amazon_musics_path %>

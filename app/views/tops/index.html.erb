@@ -10,49 +10,49 @@
 
 	<% @amazon_music.each do | music |%>
 	<% if current_user.id == music.user_id %>
-	<li class="list-group-item item">AmazonMusic:
+	<li class="list-group-item item"><%= link_to 'AmazonMusc:', amazon_music_path(music) %>
 		<%= music.price.to_s(:delimited) %>円</li>
 	<% end %>
 	<% end %>
 
 	<% @amazon_kindle.each do | kindle |%>
 	<% if current_user.id == kindle.user_id %>
-	<li class="list-group-item item">AmazonKindle:
+	<li class="list-group-item item"><%= link_to 'AmazonKindle:', amazon_kindle_unlimited_path(kindle) %>
 		<%= kindle.price.to_s(:delimited) %>円</li>
 	<% end %>
 	<% end %>
 
 	<% @google_play.each do | play |%>
 	<% if current_user.id == play.user_id %>
-	<li class="list-group-item item">GooglePlay:
+	<li class="list-group-item item"><%= link_to 'GooglePlay:', google_play_music_path(play) %>
 		<%= play.price.to_s(:delimited) %>円</li>
 	<% end %>
 	<% end %>
 
 	<% @hulu.each do | hulu |%>
 	<% if current_user.id == hulu.user_id %>
-	<li class="list-group-item item">Hulu:
+	<li class="list-group-item item"><%= link_to 'Hulu:', hulu_path(hulu) %>
 		<%= hulu.price.to_s(:delimited) %>円</li>
 	<% end %>
 	<% end %>
 
 	<% @playstation.each do | pleste |%>
 	<% if current_user.id == pleste.user_id %>
-	<li class="list-group-item item">PlayStationNetwork:
+	<li class="list-group-item item"><%= link_to 'PlayStationNetwork:', play_station_network_path(pleste) %>
 		<%= play_station.price.to_s(:delimited) %>円</li>
 	<% end %>
 	<% end %>
 
 	<% @spotify.each do | spotify |%>
 	<% if current_user.id == spotify.user_id %>
-	<li class="list-group-item item">Spotify:
+	<li class="list-group-item item"><%= link_to 'Spotify:', spotify_path(spotify) %>
 		<%= spotify.price.to_s(:delimited) %>円</li>
 	<% end %>
 	<% end %>
 
 	<% @unext.each do | unext |%>
 	<% if current_user.id == unext.user_id %>
-	<li class="list-group-item item">U-NEXT:
+	<li class="list-group-item item"><%= link_to 'U-NEXT:', unext_path(unext) %>
 		<%= unext.price.to_s(:delimited) %>円</li>
 	<% end %>
 	<% end %>
