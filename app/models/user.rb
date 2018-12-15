@@ -17,8 +17,8 @@ class User < ApplicationRecord
   has_many :apple_musics
   has_many :d_anime_stores
   has_many :au_video_passes
-  has_many :d_t_vs
-  has_many :fo_ds
+  has_many :d_tvs
+  has_many :fods
   has_many :line_musics
   has_many :netflixes
   has_many :you_tube_premia

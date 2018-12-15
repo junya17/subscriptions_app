@@ -16,7 +16,7 @@ class YouTubePremiaController < ApplicationController
 
   # GET /you_tube_premia/new
   def new
-    @you_tube_premium = YouTubePremium.new
+    @you_tube_premium = current_user.you_tube_premia.build
   end
 
   # GET /you_tube_premia/1/edit
@@ -25,7 +25,7 @@ class YouTubePremiaController < ApplicationController
   # POST /you_tube_premia
   # POST /you_tube_premia.json
   def create
-    @you_tube_premium = YouTubePremium.new(you_tube_premium_params)
+    @you_tube_premium = current_user.you_tube_premia.build(you_tube_premium_params)
 
     respond_to do |format|
       if @you_tube_premium.save

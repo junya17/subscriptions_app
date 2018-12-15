@@ -16,7 +16,7 @@ class NetflixesController < ApplicationController
 
   # GET /netflixes/new
   def new
-    @netflix = Netflix.new
+    @netflix = current_user.netflixes.build
   end
 
   # GET /netflixes/1/edit
@@ -25,7 +25,7 @@ class NetflixesController < ApplicationController
   # POST /netflixes
   # POST /netflixes.json
   def create
-    @netflix = Netflix.new(netflix_params)
+    @netflix = current_user.netflixes.build(netflix_params)
 
     respond_to do |format|
       if @netflix.save

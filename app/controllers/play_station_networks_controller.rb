@@ -16,7 +16,7 @@ class PlayStationNetworksController < ApplicationController
 
   # GET /play_station_networks/new
   def new
-    @play_station_network = PlayStationNetwork.new
+    @play_station_network = current_user.play_station_networks.build
   end
 
   # GET /play_station_networks/1/edit
@@ -25,7 +25,7 @@ class PlayStationNetworksController < ApplicationController
   # POST /play_station_networks
   # POST /play_station_networks.json
   def create
-    @play_station_network = PlayStationNetwork.new(play_station_network_params)
+    @play_station_network = current_user.play_station_networks.build(play_station_network_params)
 
     respond_to do |format|
       if @play_station_network.save

@@ -16,7 +16,7 @@ class AuVideoPassesController < ApplicationController
 
   # GET /au_video_passes/new
   def new
-    @au_video_pass = AuVideoPass.new
+    @au_video_pass = current_user.au_video_passes.build
   end
 
   # GET /au_video_passes/1/edit
@@ -25,7 +25,7 @@ class AuVideoPassesController < ApplicationController
   # POST /au_video_passes
   # POST /au_video_passes.json
   def create
-    @au_video_pass = AuVideoPass.new(au_video_pass_params)
+    @au_video_pass = current_user.au_video_passes.build(au_video_pass_params)
 
     respond_to do |format|
       if @au_video_pass.save

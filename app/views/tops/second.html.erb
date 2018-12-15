@@ -176,7 +176,7 @@
 			<i class="fa fa-plus"></i>
 			<% end %>
 			<% elsif @netflix.find_by(user_id: current_user.id)%>
-			<%=link_to netflix(@netflix_user), method: :delete, class: "button" do%>
+			<%=link_to netflix_path(@netflix_user), method: :delete, class: "button" do%>
 			<i class="fa fa-minus"></i>
 			<% end %>
 			<% else%>

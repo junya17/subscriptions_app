@@ -16,7 +16,7 @@ class DAnimeStoresController < ApplicationController
 
   # GET /d_anime_stores/new
   def new
-    @d_anime_store = DAnimeStore.new
+    @d_anime_store = current_user.d_anime_stores.build
   end
 
   # GET /d_anime_stores/1/edit
@@ -25,7 +25,7 @@ class DAnimeStoresController < ApplicationController
   # POST /d_anime_stores
   # POST /d_anime_stores.json
   def create
-    @d_anime_store = DAnimeStore.new(d_anime_store_params)
+    @d_anime_store = current_user.d_anime_stores.build(d_anime_store_params)
 
     respond_to do |format|
       if @d_anime_store.save

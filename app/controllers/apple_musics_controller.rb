@@ -16,7 +16,7 @@ class AppleMusicsController < ApplicationController
 
   # GET /apple_musics/new
   def new
-    @apple_music = AppleMusic.new
+    @apple_music = current_user.apple_musics.build
   end
 
   # GET /apple_musics/1/edit
@@ -25,7 +25,7 @@ class AppleMusicsController < ApplicationController
   # POST /apple_musics
   # POST /apple_musics.json
   def create
-    @apple_music = AppleMusic.new(apple_music_params)
+    @apple_music = current_user.apple_musics.build(apple_music_params)
 
     respond_to do |format|
       if @apple_music.save

@@ -16,7 +16,7 @@ class LineMusicsController < ApplicationController
 
   # GET /line_musics/new
   def new
-    @line_music = LineMusic.new
+    @line_music = current_user.line_musics.build
   end
 
   # GET /line_musics/1/edit
@@ -25,7 +25,7 @@ class LineMusicsController < ApplicationController
   # POST /line_musics
   # POST /line_musics.json
   def create
-    @line_music = LineMusic.new(line_music_params)
+    @line_music = current_user.line_musics.build(line_music_params)
 
     respond_to do |format|
       if @line_music.save

@@ -16,7 +16,7 @@ class DTvsController < ApplicationController
 
   # GET /d_tvs/new
   def new
-    @d_tv = DTv.new
+    @d_tv = current_user.d_tvs.build
   end
 
   # GET /d_tvs/1/edit
@@ -25,7 +25,7 @@ class DTvsController < ApplicationController
   # POST /d_tvs
   # POST /d_tvs.json
   def create
-    @d_tv = DTv.new(d_tv_params)
+    @d_tv = current_user.d_tvs.build(d_tv_params)
 
     respond_to do |format|
       if @d_tv.save

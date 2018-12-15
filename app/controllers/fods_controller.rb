@@ -16,7 +16,7 @@ class FodsController < ApplicationController
 
   # GET /fods/new
   def new
-    @fod = Fod.new
+    @fod = current_user.fods.build
   end
 
   # GET /fods/1/edit
@@ -25,7 +25,7 @@ class FodsController < ApplicationController
   # POST /fods
   # POST /fods.json
   def create
-    @fod = Fod.new(fod_params)
+    @fod = current_user.fods.build(fod_params)
 
     respond_to do |format|
       if @fod.save
