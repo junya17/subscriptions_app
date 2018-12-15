@@ -2,6 +2,7 @@
 
 class DAnimeStoresController < ApplicationController
   before_action :set_d_anime_store, only: %i[show edit update destroy]
+  before_action :authenticate_user!
 
   # GET /d_anime_stores
   # GET /d_anime_stores.json

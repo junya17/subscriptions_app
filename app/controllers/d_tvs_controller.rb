@@ -2,6 +2,7 @@
 
 class DTvsController < ApplicationController
   before_action :set_d_tv, only: %i[show edit update destroy]
+  before_action :authenticate_user!
 
   # GET /d_tvs
   # GET /d_tvs.json

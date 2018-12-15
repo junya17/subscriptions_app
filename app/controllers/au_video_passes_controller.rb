@@ -2,6 +2,7 @@
 
 class AuVideoPassesController < ApplicationController
   before_action :set_au_video_pass, only: %i[show edit update destroy]
+  before_action :authenticate_user!
 
   # GET /au_video_passes
   # GET /au_video_passes.json
