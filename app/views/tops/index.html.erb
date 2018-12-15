@@ -3,7 +3,7 @@
 <% if current_user.id == prime.user_id %>
 <ul class="list-group list-group-flush">
 	<li class="list-group-item item">
-		<%= link_to 'AmazonPrime:', amazon_prime_path(prime) %>
+		<%= link_to 'Amazon Prime:', amazon_prime_path(prime) %>
 		<p class="price">
 			<%= prime.price.to_s(:delimited)%>円</p>
 	</li>
@@ -13,7 +13,7 @@
 	<% @amazon_music.each do | music |%>
 	<% if current_user.id == music.user_id %>
 	<li class="list-group-item item">
-		<%= link_to 'AmazonMusc:', amazon_music_path(music) %>
+		<%= link_to 'Amazon Music:', amazon_music_path(music) %>
 		<p class="price">
 			<%= music.price.to_s(:delimited)%>円</p>
 	</li>
@@ -23,9 +23,59 @@
 	<% @amazon_kindle.each do | kindle |%>
 	<% if current_user.id == kindle.user_id %>
 	<li class="list-group-item item">
-		<%= link_to 'AmazonKindle:', amazon_kindle_unlimited_path(kindle) %>
+		<%= link_to 'Amazon Kindle:', amazon_kindle_unlimited_path(kindle) %>
 		<p class="price">
 			<%= kindle.price.to_s(:delimited)%>円</p>
+	</li>
+	<% end %>
+	<% end %>
+
+	<% @apple_music.each do | apple |%>
+	<% if current_user.id == apple.user_id %>
+	<li class="list-group-item item">
+		<%= link_to 'Apple Music:', apple_music_path(apple) %>
+		<p class="price">
+			<%= apple.price.to_s(:delimited)%>円</p>
+	</li>
+	<% end %>
+	<% end %>
+
+	<% @au_video_pass.each do | auvideo |%>
+	<% if current_user.id == auvideo.user_id %>
+	<li class="list-group-item item">
+		<%= link_to 'auビデオパス:', au_video_pass_path(auvideo) %>
+		<p class="price">
+			<%= auvideo.price.to_s(:delimited)%>円</p>
+	</li>
+	<% end %>
+	<% end %>
+
+	<% @danime_store.each do | danime |%>
+	<% if current_user.id == danime.user_id %>
+	<li class="list-group-item item">
+		<%= link_to 'dアニメストア:', d_anime_store_path(danime) %>
+		<p class="price">
+			<%= danime.price.to_s(:delimited)%>円</p>
+	</li>
+	<% end %>
+	<% end %>
+
+	<% @dtv.each do | dtv |%>
+	<% if current_user.id == dtv.user_id %>
+	<li class="list-group-item item">
+		<%= link_to 'dTV:', d_tv_path(dtv) %>
+		<p class="price">
+			<%= dtv.price.to_s(:delimited)%>円</p>
+	</li>
+	<% end %>
+	<% end %>
+
+	<% @fod.each do | fod |%>
+	<% if current_user.id == fod.user_id %>
+	<li class="list-group-item item">
+		<%= link_to 'FOD:', fod_path(fod) %>
+		<p class="price">
+			<%= fod.price.to_s(:delimited)%>円</p>
 	</li>
 	<% end %>
 	<% end %>
@@ -33,7 +83,7 @@
 	<% @google_play.each do | play |%>
 	<% if current_user.id == play.user_id %>
 	<li class="list-group-item item">
-		<%= link_to 'GooglePlay:', google_play_music_path(play) %>
+		<%= link_to 'Google Play:', google_play_music_path(play) %>
 		<p class="price">
 			<%= play.price.to_s(:delimited)%>円</p>
 	</li>
@@ -50,10 +100,30 @@
 	<% end %>
 	<% end %>
 
+	<% @line_music.each do | line |%>
+	<% if current_user.id == line.user_id %>
+	<li class="list-group-item item">
+		<%= link_to 'line:', line_music_path(line) %>
+		<p class="price">
+			<%= line.price.to_s(:delimited)%>円</p>
+	</li>
+	<% end %>
+	<% end %>
+
+	<% @netflix.each do | netflix |%>
+	<% if current_user.id == netflix.user_id %>
+	<li class="list-group-item item">
+		<%= link_to 'Netflix:', netflix_path(netflix) %>
+		<p class="price">
+			<%= netflix.price.to_s(:delimited)%>円</p>
+	</li>
+	<% end %>
+	<% end %>
+
 	<% @playstation.each do | pleste |%>
 	<% if current_user.id == pleste.user_id %>
 	<li class="list-group-item item">
-		<%= link_to 'PlayStationNetwork:', play_station_network_path(pleste) %>
+		<%= link_to 'PlayStation Network:', play_station_network_path(pleste) %>
 		<p class="price">
 			<%= play_station.price.to_s(:delimited)%>円</p>
 	</li>
@@ -80,12 +150,12 @@
 	<% end %>
 	<% end %>
 
-	<% @unext.each do | unext |%>
-	<% if current_user.id == unext.user_id %>
+	<% @you_tube_premium.each do | youtube |%>
+	<% if current_user.id == youtube.user_id %>
 	<li class="list-group-item item">
-		<%= link_to 'U-NEXT:', unext_path(unext) %>
+		<%= link_to 'YouTube Premium:', you_tube_premium_path(youtube) %>
 		<p class="price">
-			<%= unext.price.to_s(:delimited)%>円</p>
+			<%= youtube.price.to_s(:delimited)%>円</p>
 	</li>
 	<% end %>
 	<% end %>

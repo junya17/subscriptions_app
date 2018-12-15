@@ -17,13 +17,13 @@ class TopsController < ApplicationController
     @danime_store = DAnimeStore.all
 
     @dtv = DTv.all
-    
+
     @fod = Fod.all
 
     @google_play = GooglePlayMusic.all
 
     @hulu = Hulu.all
-    
+
     @line_music = LineMusic.all
 
     @netflix = Netflix.all
@@ -36,7 +36,6 @@ class TopsController < ApplicationController
 
     @you_tube_premium = YouTubePremium.all
 
-        
     if AmazonPrime.find_by(user_id: current_user.id)
       @amazon_prime_user = AmazonPrime.where(user_id: current_user.id).first
       @amazon_prime_sum = @amazon_prime_user[:price]
