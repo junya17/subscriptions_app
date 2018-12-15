@@ -1,5 +1,3 @@
-<h1>New Netflix</h1>
-
-<%= render 'form', netflix: @netflix %>
-
-<%= link_to 'Back', netflixes_path %>
+<h1>Netflix</h1>
+<%= render 'layouts/alert', service: @netflix %>
+<%= render 'layouts/form', service: @netflix %>

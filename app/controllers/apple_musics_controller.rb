@@ -12,7 +12,8 @@ class AppleMusicsController < ApplicationController
 
   # GET /apple_musics/1
   # GET /apple_musics/1.json
-  def show; end
+  def show 
+  end
 
   # GET /apple_musics/new
   def new
@@ -29,7 +30,7 @@ class AppleMusicsController < ApplicationController
 
     respond_to do |format|
       if @apple_music.save
-        format.html { redirect_to @apple_music, notice: 'Apple music was successfully created.' }
+        format.html { redirect_to @apple_music, notice: success('Apple music')}
         format.json { render :show, status: :created, location: @apple_music }
       else
         format.html { render :new }
@@ -43,7 +44,7 @@ class AppleMusicsController < ApplicationController
   def update
     respond_to do |format|
       if @apple_music.update(apple_music_params)
-        format.html { redirect_to @apple_music, notice: 'Apple music was successfully updated.' }
+        format.html { redirect_to @apple_music, notice: 'Apple musicの更新に成功しました.' }
         format.json { render :show, status: :ok, location: @apple_music }
       else
         format.html { render :edit }
@@ -57,7 +58,7 @@ class AppleMusicsController < ApplicationController
   def destroy
     @apple_music.destroy
     respond_to do |format|
-      format.html { redirect_to apple_musics_url, notice: 'Apple music was successfully destroyed.' }
+      format.html { redirect_to apple_musics_url, notice: 'Apple musicの削除に成功しました.' }
       format.json { head :no_content }
     end
   end

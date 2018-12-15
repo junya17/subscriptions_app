@@ -4,7 +4,7 @@
   </div>
 
   <div class="field form-group">
-    <%= form.date_select :issue_date%>
+    <p class="issue_date">契約日: <%= form.date_select :issue_date , :use_month_numbers=>true %></p>
   </div>
 
   <div class="field form-group">
@@ -20,6 +20,6 @@
   </div>
 
   <div class="actions form-group">
-    <%= form.submit class: "btn btn-primary" %>
+    <%= form.submit '登録する', class: "btn btn-primary" %>
   </div>
   <% end %>

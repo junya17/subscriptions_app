@@ -12,23 +12,10 @@
 </head>
 
 <body>
-  <% if flash[:notice] %>
-  <div class="notification is-primary global-notification">
-    <p class="notice">
-      <%= notice %>
-    </p>
-  </div>
-  <% end %>
-  <% if flash[:alert] %>
-  <div class="notification is-danger global-notification">
-    <p class="alert">
-      <%= alert %>
-    </p>
-  </div>
-  <% end %>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary">
     <div class="container">
-      <%= link_to 'Home', root_path, class: "navbar-brand" %>
+      <%= link_to 'Home', root_path, class: "navbar-brand text-white" %>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
         aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -37,17 +24,17 @@
         <ul class="navbar-nav">
           <% if user_signed_in? %>
           <li class="nav-item">
-            <%= link_to 'サービスを選ぶ', second_path, class: "nav-link" %>
+            <%= link_to 'サービスを選ぶ', second_path, class: "nav-link text-white" %>
           </li>
           <li class="nav-item">
-            <%= link_to 'ログアウト', destroy_user_session_path	,method: :delete, class: "nav-link" %>
+            <%= link_to 'ログアウト', destroy_user_session_path	,method: :delete, class: "nav-link text-white" %>
           </li>
           <% else %>
           <li class="nav-item active">
-            <%= link_to '新規登録', new_user_registration_path, class: "nav-link" %>
+            <%= link_to '新規登録', new_user_registration_path, class: "nav-link text-white" %>
           </li>
           <li class="nav-item">
-            <%= link_to 'ログイン', new_user_session_path	, class: "nav-link" %>
+            <%= link_to 'ログイン', new_user_session_path	, class: "nav-link text-white" %>
           </li>
           <% end %>
         </ul>
@@ -55,6 +42,20 @@
     </div>
   </nav>
   <div class="container">
+      <% if flash[:notice] %>
+      <div class="notification is-primary global-notification">
+        <p class="notice">
+          <%= notice %>
+        </p>
+      </div>
+      <% end %>
+      <% if flash[:alert] %>
+      <div class="notification is-danger global-notification">
+        <p class="alert">
+          <%= alert %>
+        </p>
+      </div>
+      <% end %>
     <%= yield %>
   </div>
 </body>

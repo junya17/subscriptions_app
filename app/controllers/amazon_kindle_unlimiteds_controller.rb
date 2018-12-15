@@ -29,7 +29,7 @@ class AmazonKindleUnlimitedsController < ApplicationController
 
     respond_to do |format|
       if @amazon_kindle_unlimited.save
-        format.html { redirect_to root_path, notice: 'Amazon kindle unlimited was successfully created.' }
+        format.html { redirect_to root_path, notice: alert('Amazon') }
         format.json { render :show, status: :created, location: @amazon_kindle_unlimited }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class AmazonKindleUnlimitedsController < ApplicationController
   def update
     respond_to do |format|
       if @amazon_kindle_unlimited.update(amazon_kindle_unlimited_params)
-        format.html { redirect_to root_path, notice: 'Amazon kindle unlimited was successfully updated.' }
+        format.html { redirect_to root_path, notice: alert(Amazonkindle) }
         format.json { render :show, status: :ok, location: @amazon_kindle_unlimited }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class AmazonKindleUnlimitedsController < ApplicationController
   def destroy
     @amazon_kindle_unlimited.destroy
     respond_to do |format|
-      format.html { redirect_to root_path, notice: 'Amazon kindle unlimited was successfully destroyed.' }
+      format.html { redirect_to root_path, notice: 'Amazon kindle unlimitedの削除に成功しました。' }
       format.json { head :no_content }
     end
   end

@@ -16,13 +16,26 @@
  */
 
  @import "bootstrap";
-
+.navbar {
+	.container {
+		padding: 0;
+	}
+}
  .container {
-	 max-width: 500px;
+	padding: 1rem;
  }
 
  * {
 	 
+ }
+
+ .navbar {
+	 .navbar-brand {
+		 font-size: 1.5rem;
+	 }
+	 .nav-link {
+		 font-size: 1.4rem;
+	 }
  }
 
  .button {
@@ -43,4 +56,12 @@
  }
  .total-cost {
 	 font-size: 1.8rem;
+ }
+
+ select {
+	 font-size: 1.4rem;
+ }
+
+ .issue_date {
+	font-size: 1.2rem;
  }
