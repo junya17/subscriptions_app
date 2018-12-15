@@ -2,6 +2,7 @@
 
 class NetflixesController < ApplicationController
   before_action :set_netflix, only: %i[show edit update destroy]
+  before_action :authenticate_user!
 
   # GET /netflixes
   # GET /netflixes.json

@@ -2,6 +2,7 @@
 
 class YouTubePremiaController < ApplicationController
   before_action :set_you_tube_premium, only: %i[show edit update destroy]
+  before_action :authenticate_user!
 
   # GET /you_tube_premia
   # GET /you_tube_premia.json

@@ -2,6 +2,7 @@
 
 class LineMusicsController < ApplicationController
   before_action :set_line_music, only: %i[show edit update destroy]
+  before_action :authenticate_user!
 
   # GET /line_musics
   # GET /line_musics.json
