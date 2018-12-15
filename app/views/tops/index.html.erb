@@ -2,62 +2,89 @@
 <% @amazon_prime.each do | prime |%>
 <% if current_user.id == prime.user_id %>
 <ul class="list-group list-group-flush">
-	<li class="list-group-item item"><%= link_to 'AmazonPrime:', amazon_prime_path(prime) %>
-		<p class="price"><%= prime.price.to_s(:delimited)%>円</p></li>
+	<li class="list-group-item item">
+		<%= link_to 'AmazonPrime:', amazon_prime_path(prime) %>
+		<p class="price">
+			<%= prime.price.to_s(:delimited)%>円</p>
+	</li>
 	<% end %>
 	<% end %>
 
 	<% @amazon_music.each do | music |%>
 	<% if current_user.id == music.user_id %>
-	<li class="list-group-item item"><%= link_to 'AmazonMusc:', amazon_music_path(music) %>
-		<p class="price"><%= music.price.to_s(:delimited)%>円</p></li>
+	<li class="list-group-item item">
+		<%= link_to 'AmazonMusc:', amazon_music_path(music) %>
+		<p class="price">
+			<%= music.price.to_s(:delimited)%>円</p>
+	</li>
 	<% end %>
 	<% end %>
 
 	<% @amazon_kindle.each do | kindle |%>
 	<% if current_user.id == kindle.user_id %>
-	<li class="list-group-item item"><%= link_to 'AmazonKindle:', amazon_kindle_unlimited_path(kindle) %>
-		<p class="price"><%= kindle.price.to_s(:delimited)%>円</p></li>
+	<li class="list-group-item item">
+		<%= link_to 'AmazonKindle:', amazon_kindle_unlimited_path(kindle) %>
+		<p class="price">
+			<%= kindle.price.to_s(:delimited)%>円</p>
+	</li>
 	<% end %>
 	<% end %>
 
 	<% @google_play.each do | play |%>
 	<% if current_user.id == play.user_id %>
-	<li class="list-group-item item"><%= link_to 'GooglePlay:', google_play_music_path(play) %>
-		<p class="price"><%= play.price.to_s(:delimited)%>円</p></li>
+	<li class="list-group-item item">
+		<%= link_to 'GooglePlay:', google_play_music_path(play) %>
+		<p class="price">
+			<%= play.price.to_s(:delimited)%>円</p>
+	</li>
 	<% end %>
 	<% end %>
 
 	<% @hulu.each do | hulu |%>
 	<% if current_user.id == hulu.user_id %>
-	<li class="list-group-item item"><%= link_to 'Hulu:', hulu_path(hulu) %>
-		<p class="price"><%= hulu.price.to_s(:delimited)%>円</p></li>
+	<li class="list-group-item item">
+		<%= link_to 'Hulu:', hulu_path(hulu) %>
+		<p class="price">
+			<%= hulu.price.to_s(:delimited)%>円</p>
+	</li>
 	<% end %>
 	<% end %>
 
 	<% @playstation.each do | pleste |%>
 	<% if current_user.id == pleste.user_id %>
-	<li class="list-group-item item"><%= link_to 'PlayStationNetwork:', play_station_network_path(pleste) %>
-		<p class="price"><%= play_station.price.to_s(:delimited)%>円</p></li>
+	<li class="list-group-item item">
+		<%= link_to 'PlayStationNetwork:', play_station_network_path(pleste) %>
+		<p class="price">
+			<%= play_station.price.to_s(:delimited)%>円</p>
+	</li>
 	<% end %>
 	<% end %>
 
 	<% @spotify.each do | spotify |%>
 	<% if current_user.id == spotify.user_id %>
-	<li class="list-group-item item"><%= link_to 'Spotify:', spotify_path(spotify) %>
-		<p class="price"><%= spotify.price.to_s(:delimited)%>円</p></li>
+	<li class="list-group-item item">
+		<%= link_to 'Spotify:', spotify_path(spotify) %>
+		<p class="price">
+			<%= spotify.price.to_s(:delimited)%>円</p>
+	</li>
 	<% end %>
 	<% end %>
 
 	<% @unext.each do | unext |%>
 	<% if current_user.id == unext.user_id %>
-	<li class="list-group-item item"><%= link_to 'U-NEXT:', unext_path(unext) %>
-		<p class="price"><%= unext.price.to_s(:delimited)%>円</p></li>
+	<li class="list-group-item item">
+		<%= link_to 'U-NEXT:', unext_path(unext) %>
+		<p class="price">
+			<%= unext.price.to_s(:delimited)%>円</p>
+	</li>
 	<% end %>
 	<% end %>
 
 </ul>
 
-
-<div class="total-cost">合計金額:
+<div class="total-cost float-right mt-2">合計金額:
 	<%= @total.to_s(:delimited) %>円</div>
+<div class="clearfix"></div>
+<% if user_signed_in? %>
+<%= link_to 'サービスを選ぶ', second_path, class: "btn btn-primary mt-2 mb-2" %>
+<% end %>
