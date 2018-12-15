@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class FoDsController < ApplicationController
+class FodsController < ApplicationController
   before_action :set_fod, only: %i[show edit update destroy]
 
   # GET /fods

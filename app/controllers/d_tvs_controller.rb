@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class DTVsController < ApplicationController
+class DTvsController < ApplicationController
   before_action :set_d_tv, only: %i[show edit update destroy]
 
   # GET /d_tvs

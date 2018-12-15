@@ -56,6 +56,63 @@
 	</li>
 	<li class="list-group-item">
 		<p class="item">
+			AppleMusic:
+			<% if @apple_musics.empty? %>
+			<%= link_to new_apple_music_path , class: "button" do%>
+			<i class="fa fa-plus"></i>
+			<% end %>
+			<% elsif @apple_musics.find_by(user_id: current_user.id)%>
+			<%= link_to apple_music_path(@apple_music_user), method: :delete, class:"button" do%>
+			<i class="fa fa-minus"></i>
+			<% end %>
+			<% else %>
+			<%= link_to new_apple_music_path ,class: "button" do%>
+			<i class="fa fa-plus"></i>
+			<% end %>
+			<% end %>
+		</p>
+	</li>
+
+	<li class="list-group-item">
+		<p class="item">
+			Dtv:
+			<% if @dtv.empty? %>
+			<%= link_to new_d_tv_path , class: "button" do%>
+			<i class="fa fa-plus"></i>
+			<% end %>
+			<% elsif @dtv.find_by(user_id: current_user.id)%>
+			<%= link_to d_tv_path(@dtv_user), method: :delete, class:"button" do%>
+			<i class="fa fa-minus"></i>
+			<% end %>
+			<% else %>
+			<%= link_to new_d_tv_path ,class: "button" do%>
+			<i class="fa fa-plus"></i>
+			<% end %>
+			<% end %>
+		</p>
+	</li>
+
+	<li class="list-group-item">
+		<p class="item">
+			FOD:
+			<% if @fod.empty? %>
+			<%= link_to new_fod_path , class: "button" do%>
+			<i class="fa fa-plus"></i>
+			<% end %>
+			<% elsif @fod.find_by(user_id: current_user.id)%>
+			<%= link_to fod_path(@fod_user), method: :delete, class:"button" do%>
+			<i class="fa fa-minus"></i>
+			<% end %>
+			<% else %>
+			<%= link_to new_fod_path ,class: "button" do%>
+			<i class="fa fa-plus"></i>
+			<% end %>
+			<% end %>
+		</p>
+	</li>
+
+	<li class="list-group-item">
+		<p class="item">
 			GooglePlay:
 			<% if @google_plays.empty? %>
 			<%= link_to new_google_play_music_path , class: "button" do%>
@@ -66,12 +123,13 @@
 			<i class="fa fa-minus"></i>
 			<% end %>
 			<%else %>
-			<%= link_to  new_google_play_music_path , class: "button" do%>
+			<%= link_to new_google_play_music_path , class: "button" do%>
 			<i class="fa fa-plus"></i>
 			<% end %>
 			<%end %>
 		</p>
 	</li>
+
 	<li class="list-group-item">
 		<p class="item">
 			Hulu:
@@ -80,11 +138,49 @@
 			<i class="fa fa-plus"></i>
 			<% end %>
 			<% elsif @hulus.find_by(user_id: current_user.id)%>
-			<%=link_to  hulu_path(@hulu_user), method: :delete, class: "button" do%>
+			<%= link_to hulu_path(@hulu_user), method: :delete, class: "button" do%>
 			<i class="fa fa-minus"></i>
 			<% end %>
 			<% else%>
 			<%= link_to new_hulu_path , class: "button" do%>
+			<i class="fa fa-plus"></i>
+			<% end %>
+			<% end %>
+		</p>
+	</li>
+
+	<li class="list-group-item">
+		<p class="item">
+			LineMusic:
+			<% if @line_music.empty? %>
+			<%= link_to new_line_music_path , class:"button" do%>
+			<i class="fa fa-plus"></i>
+			<% end %>
+			<% elsif @line_music.find_by(user_id: current_user.id)%>
+			<%=link_to line_musics_path(@line_music_user), method: :delete, class: "button" do%>
+			<i class="fa fa-minus"></i>
+			<% end %>
+			<% else%>
+			<%= link_to new_line_music_path , class: "button" do%>
+			<i class="fa fa-plus"></i>
+			<% end %>
+			<% end %>
+		</p>
+	</li>
+
+	<li class="list-group-item">
+		<p class="item">
+			Netflix:
+			<% if @netflix.empty? %>
+			<%= link_to new_netflix_path , class:"button" do%>
+			<i class="fa fa-plus"></i>
+			<% end %>
+			<% elsif @netflix.find_by(user_id: current_user.id)%>
+			<%=link_to netflix(@netflix_user), method: :delete, class: "button" do%>
+			<i class="fa fa-minus"></i>
+			<% end %>
+			<% else%>
+			<%= link_to new_netflix_path , class: "button" do%>
 			<i class="fa fa-plus"></i>
 			<% end %>
 			<% end %>
@@ -109,6 +205,7 @@
 			<% end %>
 		</p>
 	</li>
+
 	<li class="list-group-item">
 		<p class="item">
 			U-NEXT:
@@ -122,6 +219,25 @@
 			<% end %>
 			<%else %>
 			<%= link_to new_unext_path , class: "button" do%>
+			<i class="fa fa-plus"></i>
+			<% end %>
+			<% end %>
+		</p>
+	</li>
+
+	<li class="list-group-item">
+		<p class="item">
+			YouTubePremium:
+			<% if @you_tube_premiums.empty? %>
+			<%= link_to new_you_tube_premium_path , class:"button" do%>
+			<i class="fa fa-plus"></i>
+			<% end %>
+			<% elsif @you_tube_premiums.find_by(user_id: current_user.id)%>
+			<%=link_to  you_tube_premium_path(@you_tube_premium_user), method: :delete, class: "button" do%>
+			<i class="fa fa-minus"></i>
+			<% end %>
+			<%else %>
+			<%= link_to new_you_tube_premium_path , class: "button" do%>
 			<i class="fa fa-plus"></i>
 			<% end %>
 			<% end %>
