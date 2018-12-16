@@ -1,4 +1,7 @@
 <h2>新規登録</h2>
+
+<%= video_tag('/videos/subscript.mov',controls: true,:loop => true, class: 'embed-responsive embed-responsive-16by9 mb-3') %>
+
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
