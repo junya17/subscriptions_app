@@ -12,7 +12,6 @@
 </head>
 
 <body>
-  
   <nav class="navbar navbar-expand-lg navbar-light bg-primary">
     <div class="container">
       <%= link_to 'Home', root_path, class: "navbar-brand text-white" %>
@@ -43,17 +42,13 @@
   </nav>
   <div class="container">
       <% if flash[:notice] %>
-      <div class="notification is-primary global-notification">
-        <p class="notice">
-          <%= notice %>
-        </p>
+      <div class="alert alert-primary">
+          <%= notice %> 
       </div>
       <% end %>
       <% if flash[:alert] %>
-      <div class="notification is-danger global-notification">
-        <p class="alert">
+      <div class="alert alert-danger">
           <%= alert %>
-        </p>
       </div>
       <% end %>
     <%= yield %>

@@ -29,7 +29,7 @@ class FodsController < ApplicationController
 
     respond_to do |format|
       if @fod.save
-        format.html { redirect_to @fod, notice: 'Fod was successfully created.' }
+        format.html { redirect_to root_path, notice: success('FOD') }
         format.json { render :show, status: :created, location: @fod }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class FodsController < ApplicationController
   def update
     respond_to do |format|
       if @fod.update(fod_params)
-        format.html { redirect_to @fod, notice: 'Fod was successfully updated.' }
+        format.html { redirect_to root_path, notice: update('FOD') }
         format.json { render :show, status: :ok, location: @fod }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class FodsController < ApplicationController
   def destroy
     @fod.destroy
     respond_to do |format|
-      format.html { redirect_to fods_url, notice: 'Fod was successfully destroyed.' }
+      format.html { redirect_to root_path, notice: delete('FOD') }
       format.json { head :no_content }
     end
   end

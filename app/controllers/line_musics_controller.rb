@@ -29,7 +29,7 @@ class LineMusicsController < ApplicationController
 
     respond_to do |format|
       if @line_music.save
-        format.html { redirect_to @line_music, notice: 'Line music was successfully created.' }
+        format.html { redirect_to root_path, notice: success('Line Music') }
         format.json { render :show, status: :created, location: @line_music }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class LineMusicsController < ApplicationController
   def update
     respond_to do |format|
       if @line_music.update(line_music_params)
-        format.html { redirect_to @line_music, notice: 'Line music was successfully updated.' }
+        format.html { redirect_to root_path, notice: update('Line Music') }
         format.json { render :show, status: :ok, location: @line_music }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class LineMusicsController < ApplicationController
   def destroy
     @line_music.destroy
     respond_to do |format|
-      format.html { redirect_to line_musics_url, notice: 'Line music was successfully destroyed.' }
+      format.html { redirect_to root_path, notice: delete('Line Music') }
       format.json { head :no_content }
     end
   end

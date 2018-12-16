@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 		name + 'の更新に成功しました。'
 	end
 
-	def destroy(name)
+	def delete(name)
 		name + 'の削除に成功しました。'
 	end
 

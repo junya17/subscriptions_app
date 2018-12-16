@@ -29,7 +29,7 @@ class GooglePlayMusicsController < ApplicationController
 
     respond_to do |format|
       if @google_play_music.save
-        format.html { redirect_to root_path, notice: 'Google play music was successfully created.' }
+        format.html { redirect_to root_path, notice: success('Google Play Music') }
         format.json { render :show, status: :created, location: @google_play_music }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class GooglePlayMusicsController < ApplicationController
   def update
     respond_to do |format|
       if @google_play_music.update(google_play_music_params)
-        format.html { redirect_to root_path, notice: 'Google play music was successfully updated.' }
+        format.html { redirect_to root_path, notice: update('Google Play Music') }
         format.json { render :show, status: :ok, location: @google_play_music }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class GooglePlayMusicsController < ApplicationController
   def destroy
     @google_play_music.destroy
     respond_to do |format|
-      format.html { redirect_to root_path, notice: 'Google play music was successfully destroyed.' }
+      format.html { redirect_to root_path, notice: delete('Google Play Music') }
       format.json { head :no_content }
     end
   end

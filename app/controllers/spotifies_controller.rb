@@ -29,7 +29,7 @@ class SpotifiesController < ApplicationController
 
     respond_to do |format|
       if @spotify.save
-        format.html { redirect_to root_path, notice: 'Spotify was successfully created.' }
+        format.html { redirect_to root_path, notice: success('Spotify') }
         format.json { render :show, status: :created, location: @spotify }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class SpotifiesController < ApplicationController
   def update
     respond_to do |format|
       if @spotify.update(spotify_params)
-        format.html { redirect_to root_path, notice: 'Spotify was successfully updated.' }
+        format.html { redirect_to root_path, notice: update('Spotify') }
         format.json { render :show, status: :ok, location: @spotify }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class SpotifiesController < ApplicationController
   def destroy
     @spotify.destroy
     respond_to do |format|
-      format.html { redirect_to root_path, notice: 'Spotify was successfully destroyed.' }
+      format.html { redirect_to root_path, notice: delete('Spotify') }
       format.json { head :no_content }
     end
   end

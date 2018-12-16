@@ -29,7 +29,7 @@ class DTvsController < ApplicationController
 
     respond_to do |format|
       if @d_tv.save
-        format.html { redirect_to @d_tv, notice: 'D tv was successfully created.' }
+        format.html { redirect_to root_path, notice: success('dTV') }
         format.json { render :show, status: :created, location: @d_tv }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class DTvsController < ApplicationController
   def update
     respond_to do |format|
       if @d_tv.update(d_tv_params)
-        format.html { redirect_to @d_tv, notice: 'D tv was successfully updated.' }
+        format.html { redirect_to root_path, notice: update('dTV') }
         format.json { render :show, status: :ok, location: @d_tv }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class DTvsController < ApplicationController
   def destroy
     @d_tv.destroy
     respond_to do |format|
-      format.html { redirect_to d_tvs_url, notice: 'D tv was successfully destroyed.' }
+      format.html { redirect_to root_path, notice: delete('dTV') }
       format.json { head :no_content }
     end
   end

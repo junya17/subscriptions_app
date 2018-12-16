@@ -29,7 +29,7 @@ class NetflixesController < ApplicationController
 
     respond_to do |format|
       if @netflix.save
-        format.html { redirect_to @netflix, notice: 'Netflix was successfully created.' }
+        format.html { redirect_to root_path, notice: success('Netflix') }
         format.json { render :show, status: :created, location: @netflix }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class NetflixesController < ApplicationController
   def update
     respond_to do |format|
       if @netflix.update(netflix_params)
-        format.html { redirect_to @netflix, notice: 'Netflix was successfully updated.' }
+        format.html { redirect_to root_path, notice: update('Netflix') }
         format.json { render :show, status: :ok, location: @netflix }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class NetflixesController < ApplicationController
   def destroy
     @netflix.destroy
     respond_to do |format|
-      format.html { redirect_to netflixes_url, notice: 'Netflix was successfully destroyed.' }
+      format.html { redirect_to root_path, notice: delete('Netflix') }
       format.json { head :no_content }
     end
   end

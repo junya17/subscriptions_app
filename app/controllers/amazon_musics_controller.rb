@@ -29,7 +29,7 @@ class AmazonMusicsController < ApplicationController
 
     respond_to do |format|
       if @amazon_music.save
-        format.html { redirect_to root_path, notice: 'Amazon musicの登録に成功しました.' }
+        format.html { redirect_to root_path, notice: success('Amazon Music') }
         format.json { render :show, status: :created, location: @amazon_music }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class AmazonMusicsController < ApplicationController
   def update
     respond_to do |format|
       if @amazon_music.update(amazon_music_params)
-        format.html { redirect_to root_path, notice: 'Amazon musicの更新に成功しました.' }
+        format.html { redirect_to root_path, notice: update('Amazon Music') }
         format.json { render :show, status: :ok, location: @amazon_music }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class AmazonMusicsController < ApplicationController
   def destroy
     @amazon_music.destroy
     respond_to do |format|
-      format.html { redirect_to root_path, notice: 'Amazon musicの削除に成功しました.' }
+      format.html { redirect_to root_path, notice: delete('Amazon Music') }
       format.json { head :no_content }
     end
   end

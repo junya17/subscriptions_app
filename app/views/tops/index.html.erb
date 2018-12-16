@@ -160,11 +160,15 @@
 	<% end %>
 	<% end %>
 
+	<li class="list-group-item item">
+		<div class="total-cost float-right mt-2">合計金額:
+			<%= @total.to_s(:delimited) %>円</div>
+		<div class="clearfix"></div>
+	</li>
+
 </ul>
 
-<div class="total-cost float-right mt-2">合計金額:
-	<%= @total.to_s(:delimited) %>円</div>
-<div class="clearfix"></div>
+
 <% if user_signed_in? %>
 <%= link_to 'サービスを選ぶ', second_path, class: "btn btn-primary mt-2 mb-2" %>
 <% end %>

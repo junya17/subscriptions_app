@@ -29,7 +29,7 @@ class HulusController < ApplicationController
 
     respond_to do |format|
       if @hulu.save
-        format.html { redirect_to root_path, notice: 'Hulu was successfully created.' }
+        format.html { redirect_to root_path, notice: success('Hulu') }
         format.json { render :show, status: :created, location: root_path }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class HulusController < ApplicationController
   def update
     respond_to do |format|
       if @hulu.update(hulu_params)
-        format.html { redirect_to root_path, notice: 'Hulu was successfully updated.' }
+        format.html { redirect_to root_path, notice: update('Hulu') }
         format.json { render :show, status: :ok, location: @hulu }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class HulusController < ApplicationController
   def destroy
     @hulu.destroy
     respond_to do |format|
-      format.html { redirect_to root_path, notice: 'Hulu was successfully destroyed.' }
+      format.html { redirect_to root_path, notice: delete('Hulu') }
       format.json { head :no_content }
     end
   end

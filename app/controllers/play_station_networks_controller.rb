@@ -29,7 +29,7 @@ class PlayStationNetworksController < ApplicationController
 
     respond_to do |format|
       if @play_station_network.save
-        format.html { redirect_to root_path, notice: 'Play station network was successfully created.' }
+        format.html { redirect_to root_path, notice: success('Play Station Network') }
         format.json { render :show, status: :created, location: @play_station_network }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class PlayStationNetworksController < ApplicationController
   def update
     respond_to do |format|
       if @play_station_network.update(play_station_network_params)
-        format.html { redirect_to root_path, notice: 'Play station network was successfully updated.' }
+        format.html { redirect_to root_path, notice: update('Play Station Network') }
         format.json { render :show, status: :ok, location: @play_station_network }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class PlayStationNetworksController < ApplicationController
   def destroy
     @play_station_network.destroy
     respond_to do |format|
-      format.html { redirect_to root_path, notice: 'Play station network was successfully destroyed.' }
+      format.html { redirect_to root_path, notice: delete('Play Station Network') }
       format.json { head :no_content }
     end
   end

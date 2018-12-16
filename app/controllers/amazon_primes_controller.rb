@@ -29,7 +29,7 @@ class AmazonPrimesController < ApplicationController
 
     respond_to do |format|
       if @amazon_prime.save
-        format.html { redirect_to root_path, notice: 'Amazon primeの登録に成功しました.' }
+        format.html { redirect_to root_path, notice: success('Amazon Prime') }
         format.json { render :show, status: :created, location: @amazon_prime }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class AmazonPrimesController < ApplicationController
   def update
     respond_to do |format|
       if @amazon_prime.update(amazon_prime_params)
-        format.html { redirect_to root_path, notice: 'Amazon primeの更新に成功しました.' }
+        format.html { redirect_to root_path, notice: update('Amazon Prime') }
         format.json { render :show, status: :ok, location: @amazon_prime }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class AmazonPrimesController < ApplicationController
   def destroy
     @amazon_prime.destroy
     respond_to do |format|
-      format.html { redirect_to root_path, notice: 'Amazon primeの削除に成功しました.' }
+      format.html { redirect_to root_path, notice: delete('Amazon Prime') }
       format.json { head :no_content }
     end
   end

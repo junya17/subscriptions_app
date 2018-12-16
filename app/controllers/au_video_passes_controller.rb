@@ -29,7 +29,7 @@ class AuVideoPassesController < ApplicationController
 
     respond_to do |format|
       if @au_video_pass.save
-        format.html { redirect_to @au_video_pass, notice: 'Au video pass was successfully created.' }
+        format.html { redirect_to root_path, notice: success('auビデオパス') }
         format.json { render :show, status: :created, location: @au_video_pass }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class AuVideoPassesController < ApplicationController
   def update
     respond_to do |format|
       if @au_video_pass.update(au_video_pass_params)
-        format.html { redirect_to @au_video_pass, notice: 'Au video pass was successfully updated.' }
+        format.html { redirect_to root_path, notice: update('auビデオパス') }
         format.json { render :show, status: :ok, location: @au_video_pass }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class AuVideoPassesController < ApplicationController
   def destroy
     @au_video_pass.destroy
     respond_to do |format|
-      format.html { redirect_to au_video_passes_url, notice: 'Au video pass was successfully destroyed.' }
+      format.html { redirect_to root_path, notice: delete('auビデオパス') }
       format.json { head :no_content }
     end
   end

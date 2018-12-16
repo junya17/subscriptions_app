@@ -29,7 +29,7 @@ class YouTubePremiaController < ApplicationController
 
     respond_to do |format|
       if @you_tube_premium.save
-        format.html { redirect_to @you_tube_premium, notice: 'You tube premium was successfully created.' }
+        format.html { redirect_to root_path, notice: success('YouTube Premium') }
         format.json { render :show, status: :created, location: @you_tube_premium }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class YouTubePremiaController < ApplicationController
   def update
     respond_to do |format|
       if @you_tube_premium.update(you_tube_premium_params)
-        format.html { redirect_to @you_tube_premium, notice: 'You tube premium was successfully updated.' }
+        format.html { redirect_to root_path, notice: update('YouTube Premium') }
         format.json { render :show, status: :ok, location: @you_tube_premium }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class YouTubePremiaController < ApplicationController
   def destroy
     @you_tube_premium.destroy
     respond_to do |format|
-      format.html { redirect_to you_tube_premia_url, notice: 'You tube premium was successfully destroyed.' }
+      format.html { redirect_to root_path, notice: delete('YouTube Premium') }
       format.json { head :no_content }
     end
   end

@@ -29,7 +29,7 @@ class UnextsController < ApplicationController
 
     respond_to do |format|
       if @unext.save
-        format.html { redirect_to root_path, notice: 'Unext was successfully created.' }
+        format.html { redirect_to root_path, notice: success('U-NEXT') }
         format.json { render :show, status: :created, location: @unext }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class UnextsController < ApplicationController
   def update
     respond_to do |format|
       if @unext.update(unext_params)
-        format.html { redirect_to root_path, notice: 'Unext was successfully updated.' }
+        format.html { redirect_to root_path, notice: update('U-NEXT') }
         format.json { render :show, status: :ok, location: @unext }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class UnextsController < ApplicationController
   def destroy
     @unext.destroy
     respond_to do |format|
-      format.html { redirect_to root_path, notice: 'Unext was successfully destroyed.' }
+      format.html { redirect_to root_path, notice: delete('U-NEXT')}
       format.json { head :no_content }
     end
   end

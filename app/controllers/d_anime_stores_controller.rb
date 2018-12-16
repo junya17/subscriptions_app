@@ -29,7 +29,7 @@ class DAnimeStoresController < ApplicationController
 
     respond_to do |format|
       if @d_anime_store.save
-        format.html { redirect_to @d_anime_store, notice: 'D anime store was successfully created.' }
+        format.html { redirect_to root_path, notice: success('dアニメストア') }
         format.json { render :show, status: :created, location: @d_anime_store }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class DAnimeStoresController < ApplicationController
   def update
     respond_to do |format|
       if @d_anime_store.update(d_anime_store_params)
-        format.html { redirect_to @d_anime_store, notice: 'D anime store was successfully updated.' }
+        format.html { redirect_to root_path, notice: update('dアニメストア') }
         format.json { render :show, status: :ok, location: @d_anime_store }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class DAnimeStoresController < ApplicationController
   def destroy
     @d_anime_store.destroy
     respond_to do |format|
-      format.html { redirect_to d_anime_stores_url, notice: 'D anime store was successfully destroyed.' }
+      format.html { redirect_to root_path, notice: delete('dアニメストア') }
       format.json { head :no_content }
     end
   end
