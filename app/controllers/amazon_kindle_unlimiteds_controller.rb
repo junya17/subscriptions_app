@@ -12,7 +12,8 @@ class AmazonKindleUnlimitedsController < ApplicationController
 
   # GET /amazon_kindle_unlimiteds/1
   # GET /amazon_kindle_unlimiteds/1.json
-  def show; end
+  def show
+   end
 
   # GET /amazon_kindle_unlimiteds/new
   def new
@@ -20,7 +21,8 @@ class AmazonKindleUnlimitedsController < ApplicationController
   end
 
   # GET /amazon_kindle_unlimiteds/1/edit
-  def edit; end
+  def edit
+   end
 
   # POST /amazon_kindle_unlimiteds
   # POST /amazon_kindle_unlimiteds.json
