@@ -16,6 +16,8 @@
  */
 
  @import "bootstrap";
+
+ 
 .navbar {
 	.container {
 		padding: 0;
@@ -23,10 +25,6 @@
 }
  .container {
 	padding: 1rem;
- }
-
- * {
-	 
  }
 
  .navbar {
@@ -65,3 +63,9 @@
  .issue_date {
 	font-size: 1.2rem;
  }
+
+ .sign_up {
+	 font-size: 1.2rem;
+ }
+
+ 
