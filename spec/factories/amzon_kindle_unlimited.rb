@@ -1,23 +1,27 @@
-FactoryBot.define do 
-factory :amazon_kindle_unlimited do
-	price {980}
-	user_id {1}
+# frozen_string_literal: true
 
-	factory :kindle_2 do
-		price {980}
-		user_id {1}
-	end
+FactoryBot.define do
+  factory :amazon_kindle_unlimited do
+    price { 980 }
+    user_id { 1 }
 
-		factory :kindle_3 do
-			price {980}
-			user_id {1}
-		end
+    trait :invalid do
+      price nil
+    end
+  end
 
-			factory :kindle_4 do
-				price {980}
-				user_id {1}
-			end
-	end 
+  factory :kindle_2, class: AmazonKindleUnlimited do
+    price { 980 }
+    user_id { 1 }
+  end
+
+  factory :kindle_3, class: AmazonKindleUnlimited do
+    price { 1980 }
+    user_id { 1 }
+  end
+
+  factory :kindle_4, class: AmazonKindleUnlimited do
+    price { 980 }
+    user_id { 1 }
+  end
 end
-
-	

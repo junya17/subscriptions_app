@@ -12,8 +12,7 @@ class AppleMusicsController < ApplicationController
 
   # GET /apple_musics/1
   # GET /apple_musics/1.json
-  def show 
-  end
+  def show; end
 
   # GET /apple_musics/new
   def new
@@ -30,7 +29,7 @@ class AppleMusicsController < ApplicationController
 
     respond_to do |format|
       if @apple_music.save
-        format.html { redirect_to root_path, notice: success('Apple Music')}
+        format.html { redirect_to root_path, notice: success('Apple Music') }
         format.json { render :show, status: :created, location: @apple_music }
       else
         format.html { render :new }

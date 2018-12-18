@@ -1,6 +1,5 @@
 <h1>Editing Amazon Kindle Unlimited</h1>
+<%= render 'layouts/alert', service: @amazon_kindle_unlimited %>
+<%= render 'layouts/form', service: @amazon_kindle_unlimited %>
 
-<%= render 'form', amazon_kindle_unlimited: @amazon_kindle_unlimited %>
 
-<%= link_to 'Show', @amazon_kindle_unlimited %> |
-<%= link_to 'Back', amazon_kindle_unlimiteds_path %>

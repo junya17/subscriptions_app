@@ -12,8 +12,7 @@ class AmazonKindleUnlimitedsController < ApplicationController
 
   # GET /amazon_kindle_unlimiteds/1
   # GET /amazon_kindle_unlimiteds/1.json
-  def show
-   end
+  def show; end
 
   # GET /amazon_kindle_unlimiteds/new
   def new
@@ -21,15 +20,13 @@ class AmazonKindleUnlimitedsController < ApplicationController
   end
 
   # GET /amazon_kindle_unlimiteds/1/edit
-  def edit
-   end
+  def edit; end
 
   # POST /amazon_kindle_unlimiteds
   # POST /amazon_kindle_unlimiteds.json
   def create
     @amazon_kindle_unlimited = current_user.amazon_kindle_unlimiteds.build(amazon_kindle_unlimited_params)
-
-    respond_to do |format|
+      respond_to do |format|
       if @amazon_kindle_unlimited.save
         format.html { redirect_to root_path, notice: success('Amazon Kindle Unlimited') }
         format.json { render :show, status: :created, location: @amazon_kindle_unlimited }
@@ -45,7 +42,7 @@ class AmazonKindleUnlimitedsController < ApplicationController
   def update
     respond_to do |format|
       if @amazon_kindle_unlimited.update(amazon_kindle_unlimited_params)
-        format.html { redirect_to root_path, notice: update('Amazon Kindle Unlimited')}
+        format.html { redirect_to root_path, notice: success('Amazon Kindle Unlimited') }
         format.json { render :show, status: :ok, location: @amazon_kindle_unlimited }
       else
         format.html { render :edit }
