@@ -1,12 +1,26 @@
 <ul class="list-group">
-	<li class="list-group-item"><strong>Name:</strong><%= name %></li>
-	<li class="list-group-item"><strong>Price:</strong><%= url.price %></li>
-	<li class="list-group-item"><strong>Issue date:</strong><%= url.issue_date %></li>
-	<li class="list-group-item"><strong>Update period:</strong><%= url.update_period %></li>
-	<li class="list-group-item"><strong>Status:</strong><%= url.status %></li>
-	<li class="list-group-item">  <strong>Memo:</strong><%= url.memo %>
+	<li class="list-group-item item"><strong>サービス名:</strong>
+		<%= name %>
 	</li>
-  </ul>
-  
-  
-  
+	<li class="list-group-item item"><strong>価格:</strong>
+		<%= url.price %>円</li>
+	<% if url.issue_date == true %>
+	<li class="list-group-item item"><strong>契約日:</strong>
+		<%= url.issue_date %>
+	</li>
+	<% end %>
+	<% if url.update_period == true %>
+	<li class="list-group-item item"><strong>更新期間:</strong>
+		<%= url.update_period %>日</li>
+	<% end %>
+	<% if url.status == true %>
+	<li class="list-group-item item"><strong>有料 or 無料:</strong>
+		<%= url.status %>
+	</li>
+	<% end %>
+	<% if url.memo == true %>
+	<li class="list-group-item item"><strong>メモ:</strong>
+		<%= url.memo %>
+	</li>
+	<%end%>
+</ul>

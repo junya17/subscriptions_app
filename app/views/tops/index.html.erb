@@ -1,7 +1,7 @@
 <h1>登録サービス一覧</h1>
 <% @amazon_prime.each do | prime |%>
 <% if current_user.id == prime.user_id %>
-<ul class="list-group list-group-flush">
+<ul class="list-group">
 	<li class="list-group-item item">
 		<%= link_to 'Amazon Prime:', amazon_prime_path(prime) %>
 		<p class="price">
@@ -168,7 +168,4 @@
 
 </ul>
 
-
-<% if user_signed_in? %>
 <%= link_to 'サービスを選ぶ', second_path, class: "btn btn-primary mt-2 mb-2" %>
-<% end %>
